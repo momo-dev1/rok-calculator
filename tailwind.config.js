@@ -16,6 +16,7 @@ module.exports = {
         'speed-frame-blue': "url('/assets/speed/speedup_bg_frame-blue.webp')",
         'speed-frame-purple': "url('/assets/speed/speedup_bg_frame-purple.webp')",
         'banner-blue': "url('/assets/Banner-blue.webp')",
+        'bg-building-blue': "url('/assets/bg_building_blue.webp')",
       },
       boxShadow: {
         "neumorphic": "inset 2px 2px 5px rgba(163, 177, 198, 0.5),inset -2px -2px 5px rgba(0,0,0,0.5)"

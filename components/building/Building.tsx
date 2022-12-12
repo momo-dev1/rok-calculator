@@ -1,20 +1,18 @@
 /* eslint-disable @next/next/no-img-element */
 import Select from "../shared/Select";
-
 type Props = {
   item: any;
   handleInputChange: (e: {
     target: { name: any; value: any; maxLength: any };
   }) => void;
 };
-{
-}
+
 const Building = ({ item, handleInputChange }: Props) => {
   return (
     <div className="my-5 text-center">
       <figure className="relative flex flex-col items-center">
-        <div className="h-[150px]">
-          <div className="flex items-center justify-center p-1 h-full">
+        <div className="h-[140px] w-full bg-bg-building-blue object-cover object-center">
+          <div className="flex items-center justify-center p-1 h-full ">
             <img
               className="w-full h-full object-contain"
               width={423}
@@ -27,7 +25,7 @@ const Building = ({ item, handleInputChange }: Props) => {
           <input
             className={`${
               item.qty > 1 ? "text-yellow-300" : "text-white"
-            } text-center bg-zinc-600 outline-none font-semibold py-1 border border-yellow-500 w-10 top-0 right-0 absolute`}
+            } flex-shrink-0 text-center bg-zinc-600 outline-none font-semibold py-1 border border-yellow-500 w-10 top-0 right-0 absolute`}
             type="number"
             name={item.name}
             autoComplete="off"

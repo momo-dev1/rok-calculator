@@ -18,7 +18,7 @@ import {
 } from "public/assets";
 
 const BuildingsPage: NextPage = () => {
-  const { buildings, food, rock, timber, ore, time, might, speedBoost } =
+  const { buildings, food, rock, timber, power, time, speedBoost } =
     useSelector((state: any) => state.buildings);
   const { offset } = useSelector((state: any) => state.global);
   const dispatch = useDispatch();
@@ -94,12 +94,8 @@ const BuildingsPage: NextPage = () => {
             food={food}
             rock={rock}
             timber={timber}
-            ore={ore}
             time={time}
-            might={might}
-            gold={0}
-            noGold
-            show
+            power={power}
             speedBoost={speedBoost}
             bgColor="rgb(158 158 52 / .2)"
             currentScroll={offset}
@@ -112,7 +108,7 @@ const BuildingsPage: NextPage = () => {
                     {categoryName}
                   </h2>
                 </div>
-                <div className="gap-14 md:grid-cols-5 md:px-10 grid items-end justify-center grid-cols-2 mt-2 p-3">
+                <div className="gap-14 xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 md:px-10 grid items-end justify-center grid-cols-2 mt-2 p-3">
                   {buildings
                     .filter((item: any) => item.category === categoryName)
                     .map((building: any, idx: number) => (

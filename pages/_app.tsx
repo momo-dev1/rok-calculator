@@ -10,7 +10,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <>
       {/* Global site tag (gtag.js) - Google Analytics */}
       <Script
-        src="https://www.googletagmanager.com/gtag/js?id=UA-250341375-1"
+        src="https://www.googletagmanager.com/gtag/js?id="
         strategy="afterInteractive"
       />
       <Script id="google-analytics" strategy="afterInteractive">
@@ -19,7 +19,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
         
-          gtag('config', 'UA-250341375-1');
+          gtag('config', '');
         `}
       </Script>
       <Provider store={store}>

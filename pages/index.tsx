@@ -70,7 +70,7 @@ const Home: NextPage = () => {
         <div className="bg-[#292929] p-10 max-w-5xl	lg:mx-auto rounded-md mb-14 mx-4">
           <h1 className="md:text-5xl text-3xl">Lords Mobile Calculator</h1>
           <p className="max-w-3xl mt-4 text-gray-200 text-sm md:text-base">
-            These Lords Mobile Calculator will help you manage your resources in
+            Rise of Kingdoms Calculator will help you manage your resources in
             the game much easier! Simply navigate to the tool you would want to
             use from the menu below!
           </p>

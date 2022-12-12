@@ -14,13 +14,11 @@ export type Props = {
   food: number;
   rock: number;
   timber: number;
-  gold: number;
   time: number;
-  might: number;
+  power: number;
   bgColor: string;
   subsidy?: number;
   speedBoost: number;
-  show?: Boolean;
   currentScroll: number;
 };
 
@@ -29,9 +27,7 @@ const Resources = ({
   rock,
   timber,
   time,
-  might,
-  gold,
-  show,
+  power,
   subsidy,
   speedBoost,
   bgColor,
@@ -63,7 +59,7 @@ const Resources = ({
       }`}
     >
       <div
-        className={`flex flex-col items-center justify-center ${
+        className={`flex flex-col items-center justify-center gap-1 ${
           subsidy || 0 > 0 ? "text-green-400" : ""
         }`}
       >
@@ -72,7 +68,7 @@ const Resources = ({
       </div>
 
       <div
-        className={`flex flex-col items-center justify-center  ${
+        className={`flex flex-col items-center justify-center gap-1 ${
           subsidy || 0 > 0 ? "text-green-400" : ""
         }`}
       >
@@ -81,7 +77,7 @@ const Resources = ({
       </div>
 
       <div
-        className={`flex flex-col items-center justify-center  ${
+        className={`flex flex-col items-center justify-center gap-1 ${
           subsidy || 0 > 0 ? "text-green-400" : ""
         }`}
       >
@@ -89,24 +85,13 @@ const Resources = ({
         {formatResources(rock)}
       </div>
 
-      <div
-        className={`flex flex-col items-center justify-center  ${
-          subsidy || 0 > 0 ? "text-green-400" : ""
-        }`}
-      >
-        <GoldIcon />
-        {formatResources(gold)}
+      <div className="flex flex-col items-center justify-center gap-1">
+        <p className="py-2 font-audiowide font-thin ">Power</p>
+        {formatResources(power)}
       </div>
 
-      {show && (
-        <div className="flex flex-col items-center justify-center ">
-          <MightIcon />
-          {formatResources(might)}
-        </div>
-      )}
-
       <div
-        className={`flex flex-col items-center justify-center  ${
+        className={`flex flex-col items-center justify-center gap-1 ${
           speedBoost > 0 ? "text-green-400" : ""
         }`}
       >

@@ -43,10 +43,10 @@ export type SpeedUp = {
 
 export type Building = {
     name: string;
+    category: string;
     food: number[];
     rock: number[];
     timber: number[];
-    ore: number[];
     power: number[];
     time: number[];
     level: number[];
@@ -56,7 +56,6 @@ export type Building = {
     totalFood: number;
     totalRock: number;
     totalTimber: number;
-    totalOre: number;
     totalPower: number;
     totalTime: number;
 }
@@ -65,7 +64,6 @@ export interface buildingsInitialState {
     food: number,
     rock: number,
     timber: number,
-    ore: number,
     time: number,
     power: number,
     speedBoost: number,

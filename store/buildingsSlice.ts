@@ -6,7 +6,6 @@ const initialState: buildingsInitialState = {
     food: 0,
     rock: 0,
     timber: 0,
-    ore: 0,
     time: 0,
     power: 0,
     speedBoost: 0,
@@ -51,7 +50,6 @@ const buildingsSlice = createSlice({
                     buildingName[idx].totalFood = 0
                     buildingName[idx].totalRock = 0
                     buildingName[idx].totalTimber = 0
-                    buildingName[idx].totalOre = 0
                     buildingName[idx].totalItems = 0
                     buildingName[idx].totalPower = 0
                     buildingName[idx].totalTime = 0
@@ -63,13 +61,11 @@ const buildingsSlice = createSlice({
                     let food = buildingName[idx].food.slice(start, end).reduce((acc: any, curr: any) => acc + curr)
                     let rock = buildingName[idx].rock.slice(start, end).reduce((acc: any, curr: any) => acc + curr)
                     let timber = buildingName[idx].timber.slice(start, end).reduce((acc: any, curr: any) => acc + curr)
-                    let ore = buildingName[idx].ore.slice(start, end).reduce((acc: any, curr: any) => acc + curr)
-                    let power = buildingName[idx].power.slice(start, end).reduce((acc: any, curr: any) => acc + curr)
+                    let power = buildingName[idx].power.slice(start, end).reduce((acc: any, curr: any) =>  curr)
                     let time = buildingName[idx].time.slice(start, end).reduce((acc: any, curr: any) => acc + curr)
                     buildingName[idx].totalFood = food
                     buildingName[idx].totalRock = rock
                     buildingName[idx].totalTimber = timber
-                    buildingName[idx].totalOre = ore
                     buildingName[idx].totalPower = power
                     buildingName[idx].totalTime = time
                 }
@@ -82,15 +78,14 @@ const buildingsSlice = createSlice({
         totalResources: (state) => {
             const resourceTotal = (researchName: any[]) => {
                 return researchName.reduce((acc, curr) => {
-                    const { totalFood, totalRock, totalTimber, totalOre, totalPower, totalTime, qty } = curr;
+                    const { totalFood, totalRock, totalTimber, totalPower, totalTime, qty } = curr;
                     acc.food += totalFood * qty
                     acc.rock += totalRock * qty
                     acc.timber += totalTimber * qty
-                    acc.ore += totalOre * qty
                     acc.power += totalPower * qty
                     acc.time += totalTime * qty
                     return acc;
-                }, { food: 0, rock: 0, timber: 0, ore: 0, power: 0, time: 0 });
+                }, { food: 0, rock: 0, timber: 0, power: 0, time: 0 });
             }
 
             let totalBuildings = resourceTotal(state.buildings)
@@ -98,7 +93,6 @@ const buildingsSlice = createSlice({
             state.food = totalBuildings.food
             state.rock = totalBuildings.rock
             state.timber = totalBuildings.timber
-            state.ore = totalBuildings.ore
             state.power = totalBuildings.power
 
             if (state.speedBoost > 0) {

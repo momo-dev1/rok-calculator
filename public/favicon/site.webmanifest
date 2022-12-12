@@ -1,9 +1,6 @@
 {
-  "name": "Lords Mobile Calculator",
-  "short_name": "LmCalculator",
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff",
-  "display": "standalone",
+  "name": "rok Calc",
+  "short_name": "rok Calc",
   "icons": [
     {
       "src": "./android-chrome-192x192.png",
@@ -15,5 +12,8 @@
       "sizes": "512x512",
       "type": "image/png"
     }
-  ]
+  ],
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "display": "standalone"
 }
