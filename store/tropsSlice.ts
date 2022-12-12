@@ -7,6 +7,7 @@ const initialState: TroopsInitialState = {
     timber: 0,
     ore: 0,
     time: 0,
+    mgePoints: 0,
     power: 0,
     gold: 0,
     speedBoost: 0,
@@ -19,6 +20,7 @@ const initialState: TroopsInitialState = {
             timber: 50,
             gold: 0,
             time: 15,
+            mgePoints: 5,
             power: 1,
             qty: 0
         },
@@ -29,6 +31,7 @@ const initialState: TroopsInitialState = {
             timber: 60,
             gold: 0,
             time: 15,
+            mgePoints: 5,
             power: 1,
             qty: 0
         },
@@ -39,6 +42,7 @@ const initialState: TroopsInitialState = {
             timber: 40,
             gold: 0,
             time: 15,
+            mgePoints: 5,
             power: 1,
             qty: 0
         },
@@ -49,6 +53,7 @@ const initialState: TroopsInitialState = {
             timber: 60,
             gold: 0,
             time: 15,
+            mgePoints: 5,
             power: 1,
             qty: 0
         },
@@ -62,6 +67,7 @@ const initialState: TroopsInitialState = {
             timber: 100,
             gold: 0,
             time: 30,
+            mgePoints: 10,
             power: 2,
             qty: 0
         },
@@ -72,6 +78,7 @@ const initialState: TroopsInitialState = {
             timber: 100,
             gold: 0,
             time: 30,
+            mgePoints: 10,
             power: 2,
             qty: 0
         },
@@ -82,6 +89,7 @@ const initialState: TroopsInitialState = {
             timber: 0,
             gold: 0,
             time: 30,
+            mgePoints: 10,
             power: 2,
             qty: 0
         },
@@ -92,6 +100,7 @@ const initialState: TroopsInitialState = {
             timber: 65,
             gold: 0,
             time: 30,
+            mgePoints: 10,
             power: 2,
             qty: 0
         },
@@ -105,6 +114,7 @@ const initialState: TroopsInitialState = {
             timber: 150,
             gold: 10,
             time: 60,
+            mgePoints: 20,
             power: 3,
             qty: 0
         },
@@ -115,6 +125,7 @@ const initialState: TroopsInitialState = {
             timber: 150,
             gold: 10,
             time: 60,
+            mgePoints: 20,
             power: 3,
             qty: 0
         },
@@ -125,17 +136,18 @@ const initialState: TroopsInitialState = {
             timber: 0,
             gold: 10,
             time: 60,
+            mgePoints: 20,
             power: 3,
             qty: 0
         },
         {
             name: "Mangonel",
-
             food: 100,
             stone: 75,
             timber: 100,
             gold: 10,
             time: 60,
+            mgePoints: 20,
             power: 3,
             qty: 0
         },
@@ -149,6 +161,7 @@ const initialState: TroopsInitialState = {
             stone: 0,
             gold: 20,
             time: 80,
+            mgePoints: 40,
             power: 4,
             qty: 0
         },
@@ -159,6 +172,7 @@ const initialState: TroopsInitialState = {
             stone: 225,
             gold: 20,
             time: 80,
+            mgePoints: 40,
             power: 4,
             qty: 0
         },
@@ -169,6 +183,7 @@ const initialState: TroopsInitialState = {
             stone: 225,
             gold: 20,
             time: 80,
+            mgePoints: 40,
             power: 4,
             qty: 0
         },
@@ -179,6 +194,7 @@ const initialState: TroopsInitialState = {
             stone: 150,
             gold: 20,
             time: 80,
+            mgePoints: 40,
             power: 4,
             qty: 0
         },
@@ -189,6 +205,7 @@ const initialState: TroopsInitialState = {
             stone: 0,
             gold: 20,
             time: 80,
+            mgePoints: 40,
             power: 4,
             qty: 0
         },
@@ -199,6 +216,7 @@ const initialState: TroopsInitialState = {
             stone: 225,
             gold: 20,
             time: 80,
+            mgePoints: 40,
             power: 4,
             qty: 0
         },
@@ -209,6 +227,7 @@ const initialState: TroopsInitialState = {
             stone: 225,
             gold: 20,
             time: 80,
+            mgePoints: 40,
             power: 4,
             qty: 0
         },
@@ -219,6 +238,7 @@ const initialState: TroopsInitialState = {
             stone: 0,
             gold: 20,
             time: 80,
+            mgePoints: 40,
             power: 4,
             qty: 0
         },
@@ -229,6 +249,7 @@ const initialState: TroopsInitialState = {
             stone: 225,
             gold: 20,
             time: 80,
+            mgePoints: 40,
             power: 4,
             qty: 0
         },
@@ -239,6 +260,7 @@ const initialState: TroopsInitialState = {
             stone: 225,
             gold: 20,
             time: 80,
+            mgePoints: 40,
             power: 4,
             qty: 0
         },
@@ -249,6 +271,7 @@ const initialState: TroopsInitialState = {
             stone: 0,
             gold: 20,
             time: 80,
+            mgePoints: 40,
             power: 4,
             qty: 0
         },
@@ -259,6 +282,7 @@ const initialState: TroopsInitialState = {
             stone: 225,
             gold: 20,
             time: 80,
+            mgePoints: 40,
             power: 4,
             qty: 0
         },
@@ -269,6 +293,7 @@ const initialState: TroopsInitialState = {
             stone: 225,
             gold: 20,
             time: 80,
+            mgePoints: 40,
             power: 4,
             qty: 0
         },
@@ -279,6 +304,7 @@ const initialState: TroopsInitialState = {
             stone: 225,
             gold: 20,
             time: 80,
+            mgePoints: 40,
             power: 4,
             qty: 0
         },
@@ -289,6 +315,7 @@ const initialState: TroopsInitialState = {
             stone: 225,
             gold: 20,
             time: 80,
+            mgePoints: 40,
             power: 4,
             qty: 0
         },
@@ -327,12 +354,13 @@ const tropsSlice = createSlice({
         sumResources: (state) => {
             const resourceTotal = (tier: any[]) => {
                 return tier.map((item: any) => item).reduce((acc: any, curr: any) => {
-                    const { food, stone, timber, ore, time, power, gold, qty } = curr;
+                    const { food, stone, timber, ore, time, mgePoints, power, gold, qty } = curr;
                     const totalFood = food * qty
                     const totalStone = stone * qty
                     const totalTimber = timber * qty
                     const totalOre = ore * qty
                     const totalTime = time * qty
+                    const totalMgePoints = mgePoints * qty
                     const totalpower = power * qty
                     const totalGold = gold * qty
                     acc.food += totalFood
@@ -340,10 +368,11 @@ const tropsSlice = createSlice({
                     acc.timber += totalTimber
                     acc.ore += totalOre
                     acc.time += totalTime
+                    acc.mgePoints += totalMgePoints
                     acc.power += totalpower
                     acc.gold += totalGold
                     return acc;
-                }, { food: 0, stone: 0, timber: 0, ore: 0, time: 0, power: 0, gold: 0 });
+                }, { food: 0, stone: 0, timber: 0, ore: 0, time: 0, mgePoints: 0, power: 0, gold: 0 });
             }
             const tierOne = resourceTotal(state.tier1)
 
@@ -385,6 +414,7 @@ const tropsSlice = createSlice({
 
             state.power = (tierOne.power + tierTwo.power + tierThree.power + tierFour.power)
 
+            state.mgePoints = (tierOne.mgePoints + tierTwo.mgePoints + tierThree.mgePoints + tierFour.mgePoints)
 
             if (state.speedBoost > 0) {
                 state.time = (tierOne.time + tierTwo.time + tierThree.time + tierFour.time) * (100 / (100 + state.speedBoost))

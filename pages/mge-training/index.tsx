@@ -27,6 +27,7 @@ const Troops: NextPage = () => {
     time,
     power,
     gold,
+    mgePoints,
     speedBoost,
     subsidy,
     tier1,
@@ -86,6 +87,7 @@ const Troops: NextPage = () => {
             time={time}
             power={power}
             gold={gold}
+            mgePoints={mgePoints}
             subsidy={subsidy}
             speedBoost={speedBoost}
             bgColor="rgb(158 158 52 / .2)"

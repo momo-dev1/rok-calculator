@@ -5,6 +5,7 @@ export type TropTier = {
     timber: number,
     gold: number,
     time: number,
+    mgePoints: number,
     power: number,
     qty: number,
 }
@@ -76,6 +77,7 @@ export interface TroopsInitialState {
     ore: number,
     time: number,
     power: number,
+    mgePoints: number,
     gold: number,
     speedBoost: number,
     subsidy: number,

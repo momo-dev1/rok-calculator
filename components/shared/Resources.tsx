@@ -18,6 +18,7 @@ export type Props = {
   power: number;
   bgColor: string;
   gold?: number;
+  mgePoints?: number;
   subsidy?: number;
   speedBoost: number;
   currentScroll: number;
@@ -29,6 +30,7 @@ const Resources = ({
   timber,
   time,
   gold,
+  mgePoints,
   power,
   subsidy,
   speedBoost,
@@ -98,18 +100,33 @@ const Resources = ({
         </div>
       ) : null}
 
-      <div className="flex flex-col items-center justify-center gap-1">
-        <p className="py-2 font-audiowide font-thin ">Power</p>
-        {formatResources(power)}
-      </div>
-
       <div
-        className={`flex flex-col items-center justify-center gap-1 ${
+        className={`flex flex-col items-center justify-center ${
           speedBoost > 0 ? "text-green-400" : ""
         }`}
       >
         <TimeIcon />
         {formatTime(time)}
+      </div>
+
+      {mgePoints === 0 ? (
+        <div
+          className={`flex flex-col items-center justify-center -mt-1 ${
+            subsidy || 0 > 0 ? "text-green-400" : ""
+          }`}
+        >
+          <div className="text-center">
+            <p className="font-audiowide font-thin ">MGE</p>
+            <p className="font-audiowide font-thin ">Points</p>
+          </div>
+
+          {formatResources(mgePoints)}
+        </div>
+      ) : null}
+
+      <div className="flex flex-col items-center justify-center ">
+        <p className="py-2 font-audiowide font-thin ">Power</p>
+        {formatResources(power)}
       </div>
     </div>
   );
