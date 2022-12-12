@@ -1,11 +1,9 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import {
-  GemsIcon,
   GoldIcon,
   FoodIcon,
   RockIcon,
   TimeIcon,
-  MightIcon,
   TimberIcon,
 } from "../../public/assets";
 import { formatTime, formatResources } from "@/utils/helpers";
@@ -59,7 +57,7 @@ const Resources = ({
       ref={resourcesRef}
       style={{ backgroundColor: sticky ? bgColor : "transparent" }}
       className={`flex flex-wrap items-center justify-center gap-6 text-white z-[999] px-4 ${
-        sticky ? "sticky -top-[1px]  backdrop-filter backdrop-blur-2xl" : null
+        sticky ? "sticky top-0 py-1 backdrop-filter backdrop-blur-2xl" : null
       }`}
     >
       <div
@@ -109,7 +107,7 @@ const Resources = ({
         {formatTime(time)}
       </div>
 
-      {mgePoints === 0 ? (
+      {mgePoints || mgePoints === 0 ? (
         <div
           className={`flex flex-col items-center justify-center -mt-1 ${
             subsidy || 0 > 0 ? "text-green-400" : ""

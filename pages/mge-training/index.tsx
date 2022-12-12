@@ -5,13 +5,13 @@ import {
   tropsTier2,
   tropsTier3,
   tropsTier4,
+  tropsTier5,
 } from "@/utils/tropsData";
 import { clearValues, setQty, sumResources } from "@/store/tropsSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 import {
   Layout,
-  Subsidy,
   HowToUse,
   ClearBtn,
   Resources,
@@ -34,6 +34,7 @@ const Troops: NextPage = () => {
     tier2,
     tier3,
     tier4,
+    tier5,
   } = useSelector((state: any) => state.trops);
   const { offset } = useSelector((state: any) => state.global);
   const dispatch = useDispatch();
@@ -50,7 +51,7 @@ const Troops: NextPage = () => {
 
   useEffect(() => {
     dispatch(sumResources());
-  }, [tier1, tier2, tier3, tier4, speedBoost, subsidy, dispatch]);
+  }, [tier1, tier2, tier3, tier4, tier5, speedBoost, subsidy, dispatch]);
 
   return (
     <>
@@ -94,30 +95,38 @@ const Troops: NextPage = () => {
             currentScroll={offset}
           />
 
-          <TroopsTier
-            title="T1 Troops"
-            tierArray={tropsTier1}
-            tierType={tier1}
-            handleInputChange={handleInputChange}
-          />
-          <TroopsTier
-            title="T2 Troops"
-            tierArray={tropsTier2}
-            tierType={tier2}
-            handleInputChange={handleInputChange}
-          />
-          <TroopsTier
-            title="T3 Troops"
-            tierArray={tropsTier3}
-            tierType={tier3}
-            handleInputChange={handleInputChange}
-          />
-          <TroopsTier
-            title="T4 Troops"
-            tierArray={tropsTier4}
-            tierType={tier4}
-            handleInputChange={handleInputChange}
-          />
+          <div className="divide-y divide-dashed divide-gray-400 ">
+            <TroopsTier
+              title="T1 Troops"
+              tierArray={tropsTier1}
+              tierType={tier1}
+              handleInputChange={handleInputChange}
+            />
+            <TroopsTier
+              title="T2 Troops"
+              tierArray={tropsTier2}
+              tierType={tier2}
+              handleInputChange={handleInputChange}
+            />
+            <TroopsTier
+              title="T3 Troops"
+              tierArray={tropsTier3}
+              tierType={tier3}
+              handleInputChange={handleInputChange}
+            />
+            <TroopsTier
+              title="T4 Troops"
+              tierArray={tropsTier4}
+              tierType={tier4}
+              handleInputChange={handleInputChange}
+            />
+            <TroopsTier
+              title="T5 Troops"
+              tierArray={tropsTier5}
+              tierType={tier5}
+              handleInputChange={handleInputChange}
+            />
+          </div>
         </>
       </Layout>
     </>

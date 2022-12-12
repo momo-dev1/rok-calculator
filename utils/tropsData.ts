@@ -25,7 +25,22 @@ import {
     Mamluk,
     Samurai,
     TeutonicKnight,
-    ThrowingAxeman
+    ThrowingAxeman,
+    EliteCataphract,
+    EliteChuKoNu,
+    EliteConquistador,
+    EliteHwarang,
+    EliteJanissary,
+    EliteLegionary,
+    EliteLongbowman,
+    EliteMamluk,
+    EliteSamurai,
+    EliteTeutonicKnight,
+    EliteThrowingAxeman,
+    RoyalCrossbowman,
+    RoyalGuard,
+    RoyalKnight,
+    Trebuchet
 } from "../public/assets/trops"
 
 const tropsTier1 = [
@@ -135,9 +150,7 @@ const tropsTier4 = [
         only: "(Britain only)",
         category: "Archer",
         src: LongBowman
-    },
-
-    {
+    }, {
         name: "Throwing Axeman",
         only: "(France only)",
         category: "Infantry",
@@ -187,4 +200,52 @@ const tropsTier4 = [
     },
 ]
 
-export { tropsTier1, tropsTier2, tropsTier3, tropsTier4 }
+const tropsTier5 = [
+    {
+        name: 'Royal Guard', category: 'Infantry', src: RoyalGuard
+    },
+    {
+        name: 'Royal Crossbowman', category: 'Archer', src: RoyalCrossbowman
+    },
+    {
+        name: 'Royal Knight', category: 'Cavalry', src: RoyalKnight
+    },
+    {
+        name: 'Trebuchet', category: 'siege', src: Trebuchet
+    },
+    {
+        name: 'Elite Legionary', only: '(Rome only)', category: 'Infantry', src: EliteLegionary
+    },
+    {
+        name: 'Elite Teutonic Knight', only: '(Germany only)', category: 'Cavalry', src: EliteTeutonicKnight
+    },
+    {
+        name: 'Elite Longbowman', only: '(Britain only)', category: 'Archer', src: EliteLongbowman
+    },
+    {
+        name: 'Elite Throwing Axeman', only: '(France only)', category: 'Infantry', src: EliteThrowingAxeman
+    },
+    {
+        name: 'Elite Conquistador', only: '(Spain only)', category: 'Cavalry', src: EliteConquistador
+    },
+    {
+        name: 'Elite Chu-Ko-Nu', only: '(China only)', category: 'Archer', src: EliteChuKoNu
+    },
+    {
+        name: 'Elite Samurai', only: '(Japan only)', category: 'Infantry', src: EliteSamurai
+    },
+    {
+        name: 'Elite Hwarang', only: '(Korea only)', category: 'Archer', src: EliteHwarang
+    },
+    {
+        name: 'Elite Mamluk', only: '(Arabia only)', category: 'Cavalry', src: EliteMamluk
+    },
+    {
+        name: 'Elite Janissary', only: '(Ottoman only)', category: 'Archer', src: EliteJanissary
+    },
+    {
+        name: 'Elite Cataphract', only: '(Byzantium only)', category: 'Cavalry', src: EliteCataphract
+    },
+]
+
+export { tropsTier1, tropsTier2, tropsTier3, tropsTier4, tropsTier5 }

@@ -29,6 +29,21 @@ import Samurai from './tier4/Samurai.webp'
 import TeutonicKnight from './tier4/Teutonic_Knight.webp'
 import ThrowingAxeman from './tier4/Throwing_Axeman.webp'
 
+import EliteCataphract from './tier5/Elite_Cataphract.webp'
+import EliteChuKoNu from './tier5/Elite_Chu-Ko-Nu.webp'
+import EliteConquistador from './tier5/Elite_Conquistador.webp'
+import EliteHwarang from './tier5/Elite_Hwarang.webp'
+import EliteJanissary from './tier5/Elite_Janissary.webp'
+import EliteLegionary from './tier5/Elite_Legionary.webp'
+import EliteLongbowman from './tier5/Elite_Longbowman.webp'
+import EliteMamluk from './tier5/Elite_Mamluk.webp'
+import EliteSamurai from './tier5/Elite_Samurai.webp'
+import EliteTeutonicKnight from './tier5/Elite_Teutonic_Knight.webp'
+import EliteThrowingAxeman from './tier5/Elite_Throwing_Axeman.webp'
+import RoyalCrossbowman from './tier5/Royal_Crossbowman.webp'
+import RoyalGuard from './tier5/Royal_Guard.webp'
+import RoyalKnight from './tier5/Royal_Knight.webp'
+import Trebuchet from './tier5/Trebuchet.webp'
 
 export {
     Warrior,
@@ -57,6 +72,20 @@ export {
     Mamluk,
     Samurai,
     TeutonicKnight,
-    ThrowingAxeman
-
+    ThrowingAxeman,
+    EliteCataphract,
+    EliteChuKoNu,     
+    EliteConquistador,  
+    EliteHwarang,       
+    EliteJanissary,     
+    EliteLegionary,     
+    EliteLongbowman,    
+    EliteMamluk,        
+    EliteSamurai,       
+    EliteTeutonicKnight,
+    EliteThrowingAxeman,
+    RoyalCrossbowman,   
+    RoyalGuard,
+    RoyalKnight,
+    Trebuchet
 }

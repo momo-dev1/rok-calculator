@@ -319,6 +319,173 @@ const initialState: TroopsInitialState = {
             power: 4,
             qty: 0
         },
+    ],
+    tier5: [
+        {
+            name: 'Royal Guard',
+            food: 800,
+            timber: 800,
+            stone: 0,
+            gold: 400,
+            time: 120,
+            mgePoints: 100,
+            power: 10,
+            qty: 0
+        },
+        {
+            name: 'Royal Crossbowman',
+            food: 0,
+            timber: 800,
+            stone: 600,
+            gold: 400,
+            time: 120,
+            mgePoints: 100,
+            power: 10,
+            qty: 0
+        },
+        {
+            name: 'Royal Knight',
+            food: 800,
+            timber: 0,
+            stone: 600,
+            gold: 400,
+            time: 120,
+            mgePoints: 100,
+            power: 10,
+            qty: 0
+        },
+        {
+            name: 'Trebuchet',
+            food: 500,
+            timber: 500,
+            stone: 400,
+            gold: 400,
+            time: 120,
+            mgePoints: 100,
+            power: 10,
+            qty: 0
+        },
+        {
+            name: 'Elite Legionary',
+            food: 800,
+            timber: 800,
+            stone: 0,
+            gold: 400,
+            time: 120,
+            mgePoints: 100,
+            power: 10,
+            qty: 0
+        },
+        {
+            name: 'Elite Teutonic Knight',
+            food: 800,
+            timber: 0,
+            stone: 600,
+            gold: 400,
+            time: 120,
+            mgePoints: 100,
+            power: 10,
+            qty: 0
+        },
+        {
+            name: 'Elite Longbowman',
+            food: 0,
+            timber: 800,
+            stone: 600,
+            gold: 400,
+            time: 120,
+            mgePoints: 100,
+            power: 10,
+            qty: 0
+        },
+        {
+            name: 'Elite Throwing Axeman',
+            food: 800,
+            timber: 800,
+            stone: 0,
+            gold: 400,
+            time: 120,
+            mgePoints: 100,
+            power: 10,
+            qty: 0
+        },
+        {
+            name: 'Elite Conquistador',
+            food: 800,
+            timber: 0,
+            stone: 600,
+            gold: 400,
+            time: 120,
+            mgePoints: 100,
+            power: 10,
+            qty: 0
+        },
+        {
+            name: 'Elite Chu-Ko-Nu',
+            food: 0,
+            timber: 800,
+            stone: 600,
+            gold: 400,
+            time: 120,
+            mgePoints: 100,
+            power: 10,
+            qty: 0
+        },
+        {
+            name: 'Elite Samurai',
+            food: 800,
+            timber: 800,
+            stone: 0,
+            gold: 400,
+            time: 120,
+            mgePoints: 100,
+            power: 10,
+            qty: 0
+        },
+        {
+            name: 'Elite Hwarang',
+            food: 0,
+            timber: 800,
+            stone: 600,
+            gold: 400,
+            time: 120,
+            mgePoints: 100,
+            power: 10,
+            qty: 0
+        },
+        {
+            name: 'Elite Mamluk',
+            food: 800,
+            timber: 0,
+            stone: 600,
+            gold: 400,
+            time: 120,
+            mgePoints: 100,
+            power: 10,
+            qty: 0
+        },
+        {
+            name: 'Elite Janissary',
+            food: 0,
+            timber: 800,
+            stone: 600,
+            gold: 400,
+            time: 120,
+            mgePoints: 100,
+            power: 10,
+            qty: 0
+        },
+        {
+            name: 'Elite Cataphract',
+            food: 800,
+            timber: 0,
+            stone: 600,
+            gold: 400,
+            time: 120,
+            mgePoints: 100,
+            power: 10,
+            qty: 0
+        },
     ]
 };
 
@@ -348,7 +515,9 @@ const tropsSlice = createSlice({
             } else if (state.tier4.find(item => item.name.includes(name))) {
                 let idx = state.tier4.findIndex(item => item.name.includes(name))
                 state.tier4[idx].qty = +(value.replace(/,/g, ""))
-
+            } else if (state.tier5.find(item => item.name.includes(name))) {
+                let idx = state.tier5.findIndex(item => item.name.includes(name))
+                state.tier5[idx].qty = +(value.replace(/,/g, ""))
             }
         },
         sumResources: (state) => {
@@ -382,44 +551,40 @@ const tropsSlice = createSlice({
 
             const tierFour = resourceTotal(state.tier4)
 
+            const tierFive = resourceTotal(state.tier5)
+
             if (state.subsidy > 0) {
-                state.food = (tierOne.food + tierTwo.food + tierThree.food + tierFour.food) - ((tierOne.food + tierTwo.food + tierThree.food + tierFour.food) * (state.subsidy / 100))
+                state.food = (tierOne.food + tierTwo.food + tierThree.food + tierFour.food + tierFive.food) - ((tierOne.food + tierTwo.food + tierThree.food + tierFour.food + tierFive.food + tierFive.food) * (state.subsidy / 100))
             } else {
-                state.food = (tierOne.food + tierTwo.food + tierThree.food + tierFour.food)
+                state.food = (tierOne.food + tierTwo.food + tierThree.food + tierFour.food + tierFive.food)
             }
 
             if (state.subsidy > 0) {
-                state.rock = (tierOne.stone + tierTwo.stone + tierThree.stone + tierFour.stone) - ((tierOne.stone + tierTwo.stone + tierThree.stone + tierFour.stone) * (state.subsidy / 100))
+                state.rock = (tierOne.stone + tierTwo.stone + tierThree.stone + tierFour.stone + tierFive.stone) - ((tierOne.stone + tierTwo.stone + tierThree.stone + tierFour.stone + tierFive.stone) * (state.subsidy / 100))
             } else {
-                state.rock = (tierOne.stone + tierTwo.stone + tierThree.stone + tierFour.stone)
+                state.rock = (tierOne.stone + tierTwo.stone + tierThree.stone + tierFour.stone + tierFive.stone)
             }
 
             if (state.subsidy > 0) {
-                state.timber = (tierOne.timber + tierTwo.timber + tierThree.timber + tierFour.timber) - ((tierOne.timber + tierTwo.timber + tierThree.timber + tierFour.timber) * (state.subsidy / 100))
+                state.timber = (tierOne.timber + tierTwo.timber + tierThree.timber + tierFour.timber + tierFive.timber) - ((tierOne.timber + tierTwo.timber + tierThree.timber + tierFour.timber + tierFive.timber) * (state.subsidy / 100))
             } else {
-                state.timber = (tierOne.timber + tierTwo.timber + tierThree.timber + tierFour.timber)
+                state.timber = (tierOne.timber + tierTwo.timber + tierThree.timber + tierFour.timber + tierFive.timber)
             }
 
             if (state.subsidy > 0) {
-                state.ore = (tierOne.ore + tierTwo.ore + tierThree.ore + tierFour.ore) - ((tierOne.ore + tierTwo.ore + tierThree.ore + tierFour.ore) * (state.subsidy / 100))
+                state.gold = (tierTwo.gold + tierThree.gold + tierFour.gold + tierFive.gold) - ((tierTwo.gold + tierThree.gold + tierFour.gold + tierFive.gold) * (state.subsidy / 100))
             } else {
-                state.ore = (tierOne.ore + tierTwo.ore + tierThree.ore + tierFour.ore)
+                state.gold = tierTwo.gold + tierThree.gold + tierFour.gold + tierFive.gold
             }
 
-            if (state.subsidy > 0) {
-                state.gold = (tierTwo.gold + tierThree.gold + tierFour.gold) - ((tierTwo.gold + tierThree.gold + tierFour.gold) * (state.subsidy / 100))
-            } else {
-                state.gold = tierTwo.gold + tierThree.gold + tierFour.gold
-            }
+            state.power = (tierOne.power + tierTwo.power + tierThree.power + tierFour.power + tierFive.power)
 
-            state.power = (tierOne.power + tierTwo.power + tierThree.power + tierFour.power)
-
-            state.mgePoints = (tierOne.mgePoints + tierTwo.mgePoints + tierThree.mgePoints + tierFour.mgePoints)
+            state.mgePoints = (tierOne.mgePoints + tierTwo.mgePoints + tierThree.mgePoints + tierFour.mgePoints + tierFive.mgePoints)
 
             if (state.speedBoost > 0) {
-                state.time = (tierOne.time + tierTwo.time + tierThree.time + tierFour.time) * (100 / (100 + state.speedBoost))
+                state.time = (tierOne.time + tierTwo.time + tierThree.time + tierFour.time + tierFive.time) * (100 / (100 + state.speedBoost))
             } else {
-                state.time = (tierOne.time + tierTwo.time + tierThree.time + tierFour.time)
+                state.time = (tierOne.time + tierTwo.time + tierThree.time + tierFour.time + tierFive.time)
             }
 
         },

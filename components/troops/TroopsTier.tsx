@@ -15,7 +15,7 @@ const TroopsTier = ({
   handleInputChange,
 }: Props) => {
   return (
-    <div className="my-5 text-center">
+    <div className="my-5 text-center py-5">
       <h3 className="font-audiowide text-shadow text-md md:text-2xl font-bold tracking-wider text-yellow-500">
         {title}
       </h3>
