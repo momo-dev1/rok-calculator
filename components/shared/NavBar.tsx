@@ -7,7 +7,7 @@ import Logo from "/public/assets/logo.png";
 const NavBar = () => {
   const [open, setOpen] = useState(false);
   const navigation = [
-    { name: "Troop Training", path: "/troop-training/" },
+    { name: "MGE Training", path: "/mge-training/" },
     { name: "Research", path: "/research/" },
     { name: "Building", path: "/building/" },
     { name: "SpeedUps", path: "/speed-ups/" },

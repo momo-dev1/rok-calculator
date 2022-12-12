@@ -3,10 +3,9 @@ export type TropTier = {
     food: number,
     stone: number,
     timber: number,
-    ore: number,
     gold: number,
     time: number,
-    might: number,
+    power: number,
     qty: number,
 }
 export type Research = {
@@ -76,7 +75,7 @@ export interface TroopsInitialState {
     timber: number,
     ore: number,
     time: number,
-    might: number,
+    power: number,
     gold: number,
     speedBoost: number,
     subsidy: number,

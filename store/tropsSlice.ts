@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { TroopsInitialState, } from "../types/dataTypes";
+import { TroopsInitialState } from "../types/dataTypes";
 
 const initialState: TroopsInitialState = {
     food: 0,
@@ -7,194 +7,289 @@ const initialState: TroopsInitialState = {
     timber: 0,
     ore: 0,
     time: 0,
-    might: 0,
+    power: 0,
     gold: 0,
     speedBoost: 0,
     subsidy: 0,
     tier1: [
         {
-            name: "grunt",
+            name: "Warrior",
             food: 50,
             stone: 0,
             timber: 50,
-            ore: 50,
             gold: 0,
             time: 15,
-            might: 2,
+            power: 1,
             qty: 0
         },
         {
-            name: "archer",
-            food: 50,
-            stone: 50,
-            timber: 50,
-            ore: 0,
+            name: "Slinger",
+            food: 40,
+            stone: 0,
+            timber: 60,
             gold: 0,
             time: 15,
-            might: 2,
+            power: 1,
             qty: 0
         },
         {
-            name: "cataphract",
-            food: 50,
-            stone: 50,
-            timber: 0,
-            ore: 50,
+            name: "Horseman",
+            food: 60,
+            stone: 0,
+            timber: 40,
             gold: 0,
             time: 15,
-            might: 2,
+            power: 1,
             qty: 0
         },
         {
-            name: "ballista",
-            food: 50,
-            stone: 50,
-            timber: 50,
-            ore: 50,
+            name: "BatteringRam",
+            food: 60,
+            stone: 0,
+            timber: 60,
             gold: 0,
             time: 15,
-            might: 2,
+            power: 1,
             qty: 0
         },
 
     ],
     tier2: [
         {
-            name: "gladiator",
+            name: "Swordsman",
             food: 100,
             stone: 0,
             timber: 100,
-            ore: 100,
-            gold: 5,
+            gold: 0,
             time: 30,
-            might: 8,
+            power: 2,
             qty: 0
         },
         {
-            name: "sharpshooter",
-            food: 100,
-            stone: 100,
+            name: "Bowman",
+            food: 0,
+            stone: 75,
             timber: 100,
-            ore: 0,
-            gold: 5,
+            gold: 0,
             time: 30,
-            might: 8,
+            power: 2,
             qty: 0
         },
         {
-            name: "reptilianRider",
+            name: "Light Cavalry",
             food: 100,
-            stone: 100,
+            stone: 75,
             timber: 0,
-            ore: 100,
-            gold: 5,
+            gold: 0,
             time: 30,
-            might: 8,
+            power: 2,
             qty: 0
         },
         {
-            name: "catapult",
-            food: 100,
-            stone: 100,
-            timber: 100,
-            ore: 100,
-            gold: 5,
+            name: "Arcuballista",
+            food: 65,
+            stone: 50,
+            timber: 65,
+            gold: 0,
             time: 30,
-            might: 8,
+            power: 2,
             qty: 0
         },
 
     ],
     tier3: [
         {
-            name: "royalGuard",
+            name: "Spearman",
             food: 150,
             stone: 0,
             timber: 150,
-            ore: 150,
             gold: 10,
             time: 60,
-            might: 24,
+            power: 3,
             qty: 0
         },
         {
-            name: "tealthSniper",
-            food: 150,
-            stone: 150,
+            name: "Composite Bowman",
+            food: 0,
+            stone: 112,
             timber: 150,
-            ore: 0,
             gold: 10,
             time: 60,
-            might: 24,
+            power: 3,
             qty: 0
         },
         {
-            name: "royalCavalry",
+            name: "Heavy Cavalry",
             food: 150,
-            stone: 150,
+            stone: 112,
             timber: 0,
-            ore: 150,
             gold: 10,
             time: 60,
-            might: 24,
+            power: 3,
             qty: 0
         },
         {
-            name: "fireTrebuchet",
-            food: 150,
-            stone: 150,
-            timber: 150,
-            ore: 150,
+            name: "Mangonel",
+
+            food: 100,
+            stone: 75,
+            timber: 100,
             gold: 10,
             time: 60,
-            might: 24,
+            power: 3,
             qty: 0
         },
 
     ],
     tier4: [
         {
-            name: "heroicFighter",
-            food: 1000,
+            name: "Long Swordsman",
+            food: 300,
+            timber: 300,
             stone: 0,
-            timber: 1000,
-            ore: 1000,
-            gold: 500,
-            time: 120,
-            might: 36,
+            gold: 20,
+            time: 80,
+            power: 4,
             qty: 0
         },
         {
-            name: "heroicCannoner",
-            food: 1000,
-            stone: 1000,
-            timber: 1000,
-            ore: 0,
-            gold: 500,
-            time: 120,
-            might: 36,
+            name: "CrossBowman",
+            food: 0,
+            timber: 300,
+            stone: 225,
+            gold: 20,
+            time: 80,
+            power: 4,
             qty: 0
         },
         {
-            name: "ancientDrake",
-            food: 1000,
-            stone: 1000,
+            name: "Knight",
+            food: 300,
             timber: 0,
-            ore: 1000,
-            gold: 500,
-            time: 120,
-            might: 36,
+            stone: 225,
+            gold: 20,
+            time: 80,
+            power: 4,
             qty: 0
         },
         {
-            name: "destroyer",
-            food: 1000,
-            stone: 1000,
-            timber: 1000,
-            ore: 1000,
-            gold: 500,
-            time: 120,
-            might: 36,
+            name: "Ballista",
+            food: 200,
+            timber: 200,
+            stone: 150,
+            gold: 20,
+            time: 80,
+            power: 4,
+            qty: 0
+        },
+        {
+            name: "Legionary",
+            food: 300,
+            timber: 300,
+            stone: 0,
+            gold: 20,
+            time: 80,
+            power: 4,
+            qty: 0
+        },
+        {
+            name: "Teutonic Knight",
+            food: 300,
+            timber: 0,
+            stone: 225,
+            gold: 20,
+            time: 80,
+            power: 4,
+            qty: 0
+        },
+        {
+            name: "LongBowman",
+            food: 0,
+            timber: 300,
+            stone: 225,
+            gold: 20,
+            time: 80,
+            power: 4,
+            qty: 0
+        },
+        {
+            name: "Throwing Axeman",
+            food: 300,
+            timber: 300,
+            stone: 0,
+            gold: 20,
+            time: 80,
+            power: 4,
+            qty: 0
+        },
+        {
+            name: "Conquistador",
+            food: 300,
+            timber: 0,
+            stone: 225,
+            gold: 20,
+            time: 80,
+            power: 4,
+            qty: 0
+        },
+        {
+            name: "Chu-Ko-Nu",
+            food: 0,
+            timber: 300,
+            stone: 225,
+            gold: 20,
+            time: 80,
+            power: 4,
+            qty: 0
+        },
+        {
+            name: "Samurai",
+            food: 300,
+            timber: 300,
+            stone: 0,
+            gold: 20,
+            time: 80,
+            power: 4,
+            qty: 0
+        },
+        {
+            name: "Hwarang",
+            food: 0,
+            timber: 300,
+            stone: 225,
+            gold: 20,
+            time: 80,
+            power: 4,
+            qty: 0
+        },
+        {
+            name: "Mamluk",
+            food: 300,
+            timber: 0,
+            stone: 225,
+            gold: 20,
+            time: 80,
+            power: 4,
+            qty: 0
+        },
+        {
+            name: "Janissary",
+            food: 0,
+            timber: 300,
+            stone: 225,
+            gold: 20,
+            time: 80,
+            power: 4,
+            qty: 0
+        },
+        {
+            name: "Cataphract",
+            food: 300,
+            timber: 0,
+            stone: 225,
+            gold: 20,
+            time: 80,
+            power: 4,
             qty: 0
         },
     ]
@@ -232,23 +327,23 @@ const tropsSlice = createSlice({
         sumResources: (state) => {
             const resourceTotal = (tier: any[]) => {
                 return tier.map((item: any) => item).reduce((acc: any, curr: any) => {
-                    const { food, stone, timber, ore, time, might, gold, qty } = curr;
+                    const { food, stone, timber, ore, time, power, gold, qty } = curr;
                     const totalFood = food * qty
                     const totalStone = stone * qty
                     const totalTimber = timber * qty
                     const totalOre = ore * qty
                     const totalTime = time * qty
-                    const totalMight = might * qty
+                    const totalpower = power * qty
                     const totalGold = gold * qty
                     acc.food += totalFood
                     acc.stone += totalStone
                     acc.timber += totalTimber
                     acc.ore += totalOre
                     acc.time += totalTime
-                    acc.might += totalMight
+                    acc.power += totalpower
                     acc.gold += totalGold
                     return acc;
-                }, { food: 0, stone: 0, timber: 0, ore: 0, time: 0, might: 0, gold: 0 });
+                }, { food: 0, stone: 0, timber: 0, ore: 0, time: 0, power: 0, gold: 0 });
             }
             const tierOne = resourceTotal(state.tier1)
 
@@ -288,7 +383,7 @@ const tropsSlice = createSlice({
                 state.gold = tierTwo.gold + tierThree.gold + tierFour.gold
             }
 
-            state.might = (tierOne.might + tierTwo.might + tierThree.might + tierFour.might)
+            state.power = (tierOne.power + tierTwo.power + tierThree.power + tierFour.power)
 
 
             if (state.speedBoost > 0) {

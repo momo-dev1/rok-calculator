@@ -67,12 +67,14 @@ const Home: NextPage = () => {
       </Head>
 
       <section className="min-h-[calc(100vh-90px)] bg-[#222222] pt-8 text-white">
-        <div className="bg-[#292929] p-10 max-w-5xl	lg:mx-auto rounded-md mb-14 mx-4">
-          <h1 className="md:text-5xl text-3xl">Lords Mobile Calculator</h1>
-          <p className="max-w-3xl mt-4 text-gray-200 text-sm md:text-base">
+        <div className="bg-[#292929] p-10 max-w-5xl	lg:mx-auto rounded-md mb-14 mx-4 text-center">
+          <h1 className="md:text-5xl text-3xl">
+            Rise of Kingdoms Calculator (RoK)
+          </h1>
+          <p className="max-w-2xl mx-auto mt-4 text-gray-200 text-sm md:text-base">
             Rise of Kingdoms Calculator will help you manage your resources in
-            the game much easier! Simply navigate to the tool you would want to
-            use from the menu below!
+            the game much easier! Simply navigate to the tool you would like to
+            use. Choose from the ones listed below!
           </p>
         </div>
 

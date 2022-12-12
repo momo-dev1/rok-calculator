@@ -17,6 +17,7 @@ export type Props = {
   time: number;
   power: number;
   bgColor: string;
+  gold?: number;
   subsidy?: number;
   speedBoost: number;
   currentScroll: number;
@@ -27,6 +28,7 @@ const Resources = ({
   rock,
   timber,
   time,
+  gold,
   power,
   subsidy,
   speedBoost,
@@ -84,6 +86,17 @@ const Resources = ({
         <RockIcon />
         {formatResources(rock)}
       </div>
+
+      {gold ? (
+        <div
+          className={`flex flex-col items-center justify-center gap-1 ${
+            subsidy || 0 > 0 ? "text-green-400" : ""
+          }`}
+        >
+          <GoldIcon />
+          {formatResources(gold)}
+        </div>
+      ) : null}
 
       <div className="flex flex-col items-center justify-center gap-1">
         <p className="py-2 font-audiowide font-thin ">Power</p>

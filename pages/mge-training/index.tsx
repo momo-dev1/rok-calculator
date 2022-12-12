@@ -24,9 +24,8 @@ const Troops: NextPage = () => {
     food,
     rock,
     timber,
-    ore,
     time,
-    might,
+    power,
     gold,
     speedBoost,
     subsidy,
@@ -54,11 +53,11 @@ const Troops: NextPage = () => {
 
   return (
     <>
-      <HowToUse title="Troop Calculator" bgColor="rgb(62 104 124 / 0.6)">
+      <HowToUse title="Troop Calculator">
         <div className="text-md md:text-lg space-y-2 text-gray-100">
           <p>Enter the number of troops to be trained.</p>
           <p>
-            Adjust the Subsidy level and Training Boost.{" "}
+            Adjust the Training Speed Bonus .{" "}
             <span className="text-sm">(Optional)</span>
           </p>
         </div>
@@ -69,14 +68,12 @@ const Troops: NextPage = () => {
         description="lords Mobile Troop Training Calculator for a stronger turf. Calculate the time, resources and gems you need to pace the army training"
         keywords="lords mobile troop calculator,army calculator,military,t1,t2,t4,t5,rally trap,solo trap, rein trap,rss,resources,time,gems,might,lm"
         canonical="tools/troop-training/"
-        bgColor="rgb(62 104 124 / 0.6)"
       >
         <>
           <div className="flex flex-wrap items-center justify-center gap-6 mb-2">
-            <Subsidy value={subsidy} />
             <SpeedBoost
               name="troops"
-              title="Training Boost"
+              title="Training Speed Bonus"
               value={speedBoost}
             />
             <ClearBtn onClick={() => dispatch(clearValues())} />
@@ -86,36 +83,35 @@ const Troops: NextPage = () => {
             food={food}
             rock={rock}
             timber={timber}
-            ore={ore}
             time={time}
-            might={might}
+            power={power}
             gold={gold}
-            show={true}
             subsidy={subsidy}
             speedBoost={speedBoost}
-            bgColor="rgb(62 104 124 / 0.6)"
+            bgColor="rgb(158 158 52 / .2)"
             currentScroll={offset}
           />
+
           <TroopsTier
-            title="Tier 1 Troops"
+            title="T1 Troops"
             tierArray={tropsTier1}
             tierType={tier1}
             handleInputChange={handleInputChange}
           />
           <TroopsTier
-            title="Tier 2 Troops"
+            title="T2 Troops"
             tierArray={tropsTier2}
             tierType={tier2}
             handleInputChange={handleInputChange}
           />
           <TroopsTier
-            title="Tier 3 Troops"
+            title="T3 Troops"
             tierArray={tropsTier3}
             tierType={tier3}
             handleInputChange={handleInputChange}
           />
           <TroopsTier
-            title="Tier 4 Troops"
+            title="T4 Troops"
             tierArray={tropsTier4}
             tierType={tier4}
             handleInputChange={handleInputChange}

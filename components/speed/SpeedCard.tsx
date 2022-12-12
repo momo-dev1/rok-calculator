@@ -44,7 +44,7 @@ const SpeedCard = ({ name, src, value }: Props) => {
   return (
     <div className="my-5 text-center">
       <figure className="relative flex flex-col items-center">
-        <div className="mb-1 px-2">
+        <div className="px-2">
           <p
             className=" text-md text-shadow text-white font-semibold 
              w-fit mx-auto px-1 mb-0.5"

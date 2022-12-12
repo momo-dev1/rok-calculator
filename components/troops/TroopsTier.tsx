@@ -19,29 +19,39 @@ const TroopsTier = ({
       <h3 className="font-audiowide text-shadow text-md md:text-2xl font-bold tracking-wider text-yellow-500">
         {title}
       </h3>
-      <div className="md:grid-cols-4 md:px-10 grid items-center justify-center grid-cols-2 gap-5 px-2 mt-2">
+      <div className="md:grid-cols-4 md:px-10 grid items-center justify-center grid-cols-2  gap-8 px-2 mt-4">
         {tierArray.map((item: any, idx: number) => {
           return (
             <figure
               key={item.name}
-              className="relative flex flex-col items-center"
+              className="relative flex flex-col items-center rounded overflow-hidden"
             >
-              <div className="relative w-[120px] sm:w-[150px]">
+              <p className="bg-blue-400/40 text-white text-shadow py-1 w-full">
+                {item.category}
+              </p>
+
+              <div className="h-[100px] p-2 space-y-2 bg-blue-400 w-full">
                 <img
                   className="w-full h-full object-contain"
                   width={423}
                   height={423}
-                  placeholder="blur"
                   src={item.src.src}
-                  alt={`${item.name} img`}
+                  alt={`${item.name}`}
                 />
               </div>
+
+              <p className="bg-blue-400/40 text-white text-shadow py-1 w-full">
+                {item.name}
+              </p>
+
+              <p className="bg-blue-400/40 pb-1 text-xs text-white text-shadow w-full">
+                {item?.only}
+              </p>
 
               <input
                 className={`${
                   tierType[idx].qty > 0 ? "text-yellow-300" : "text-white"
-                } text-center bg-[#4d3c31] outline-none font-semibold rounded-b-lg py-1 border border-yellow-500 w-[120px] 
-                sm:w-[150px] -mt-1 `}
+                } text-center bg-blue-400/5 outline-none font-semibold rounded-b-md py-1 border border-blue-400 w-full`}
                 type="text"
                 name={item.name}
                 maxLength={11}

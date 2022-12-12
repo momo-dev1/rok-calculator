@@ -14,7 +14,7 @@ export const HomeList = [
     },
     {
         name: "Speedup Calculator",
-        text: "Calculating the Speed Up that are in your bag.",
+        text: "Calculating the SpeedUps that are in your bag.",
         src: SpeedUpsHome,
         url: "/tools/speed-up",
     },
@@ -25,7 +25,7 @@ export const HomeList = [
         url: "/tools/research"
     },
     {
-        name: "Buildings Calculator",
+        name: "Building Calculator",
         text: "Calculating the time and resources you need to upgrade your Building.",
         src: BuildingsHome,
         url: "/tools/building"
