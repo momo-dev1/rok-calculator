@@ -66,7 +66,7 @@ const Speed = () => {
             {speed.map((item: any, index: number) => {
               return (
                 <div key={index} className="text-center py-4">
-                  <h3 className="font-audiowide text-shadow my-3 text-2xl font-extrabold tracking-wider text-white">
+                  <h3 className="font-audiowide text-shadow my-3 text-2xl font-extrabold tracking-wider text-green-400">
                     {item.name}
                   </h3>
                   <div className="flex flex-wrap justify-center px-8 ">

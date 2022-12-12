@@ -21,7 +21,7 @@ const NavBar = () => {
           <div className="fixed inset-0 bg-darkCharcoal/70 z-[99999] lg:hidden"></div>
         )}
 
-        <div className="text-2xl text-white cursor-pointer w-16">
+        <div className="text-2xl text-white cursor-pointer w-12 bg-white rounded">
           <Link href="/">
             <a>
               <img
@@ -61,7 +61,7 @@ const NavBar = () => {
           <div className="flex items-center justify-between px-4 py-5 lg:hidden">
             <div
               onClick={() => setOpen(false)}
-              className="text-2xl text-white cursor-pointer w-16"
+              className="text-2xl text-white cursor-pointer w-12 bg-white rounded"
             >
               <Link href="/">
                 <a>
