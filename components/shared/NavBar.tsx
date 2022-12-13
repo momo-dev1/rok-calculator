@@ -54,7 +54,7 @@ const NavBar = () => {
           </svg>
         </button>
         <nav
-          className={`fixed top-0 lg:unset right-0 bg-ironGrey w-full max-w-xs h-full shadow-sm z-[99999] duration-300  ${
+          className={`fixed top-0 lg:unset right-0 bg-darkCharcoal w-full max-w-xs h-full shadow-sm z-[99999] duration-300  ${
             open ? "translate-x-0" : "translate-x-full"
           }`}
         >

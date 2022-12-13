@@ -42,7 +42,7 @@ const Footer = () => {
         </div>
 
         <div className="space-x-2 text-sm sm:text-base md:text-lg">
-          <span>All rights reserved.</span>
+          <span>All rights reserved</span>
 
           <span>
             • This is a fan site that is not associated, endorsed, or sponsored

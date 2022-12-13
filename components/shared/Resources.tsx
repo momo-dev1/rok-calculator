@@ -87,7 +87,7 @@ const Resources = ({
         {formatResources(rock)}
       </div>
 
-      {gold ? (
+      {gold || gold === 0 ? (
         <div
           className={`flex flex-col items-center justify-center gap-1 ${
             subsidy || 0 > 0 ? "text-green-400" : ""

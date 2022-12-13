@@ -51,22 +51,42 @@ const Troops: NextPage = () => {
 
   useEffect(() => {
     dispatch(sumResources());
-  }, [tier1, tier2, tier3, tier4, tier5, speedBoost, subsidy, dispatch]);
+  }, [tier1, tier2, tier3, tier4, tier5, speedBoost, dispatch]);
 
   return (
     <>
-      <HowToUse title="Troop Calculator">
+      <HowToUse title="Troops Calculator">
         <div className="text-md md:text-lg space-y-2 text-gray-100">
           <p>Enter the number of troops to be trained.</p>
           <p>
-            Adjust the Training Speed Bonus .{" "}
+            Adjust the Training Speed Buff{" "}
             <span className="text-sm">(Optional)</span>
           </p>
+          <ol className="space-y-2">
+            <p className="text-2xl text-shadow text-yellow-400">• Note •</p>
+            <li>
+              1- Your total troop training buff can be found by going to your
+              city hall and clicking on the graph icon.
+            </li>
+            <li>
+              <span>2- Max troop training buff is 103%</span>
+              <div className="mt-1 ml-5 text-gray-300 text-sm space-y-1">
+                <p>- Vip : 25%</p>
+                <p>- Tech : 20%</p>
+                <p>- Rune : 7% ~ 15%</p>
+                <p>- Title (Duke) : 10%</p>
+                <p>- Kindom buff : 10%</p>
+                <p>- City skin (Heliopolis) : 3%</p>
+                <p>- Civilization (Germany, Britain): 5%</p>
+                <p>- Alliance holy site (Shrine of war, Storm Altar) : 15%</p>
+              </div>
+            </li>
+          </ol>
         </div>
       </HowToUse>
 
       <Layout
-        title="Troop Training Calculator"
+        title="Troops Training Calculator"
         description="Rise of Kingdoms (RoK) - Troop Training Calculator Figure out the number of minutes and resources needed to train troops."
         keywords="rise of kingdoms calculator, rok calculator, rok training, rok troops training, rok healing, rok calculate healing, rok calculate resources, rok calculate speedup, rok speedups, rok resources, rise of kindgdom healing calculator, rise of kingdom calculate resources, rise of kingdom calculate speedup"
         canonical="mge-training/"
@@ -75,7 +95,7 @@ const Troops: NextPage = () => {
           <div className="flex flex-wrap items-center justify-center gap-6 mb-2">
             <SpeedBoost
               name="troops"
-              title="Training Speed Bonus"
+              title="Training Speed Buff"
               value={speedBoost}
             />
             <ClearBtn onClick={() => dispatch(clearValues())} />
