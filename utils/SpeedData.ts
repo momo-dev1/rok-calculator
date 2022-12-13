@@ -116,8 +116,8 @@ export const SpeedOther = [
     { name: "gem-1,000", category: "gem", color: "purple", src: Gems, amount: 1000, value: 0 },
     { name: "gem-2,000", category: "gem", color: "purple", src: Gems, amount: 2000, value: 0 },
 
-    { name: "action-50", category: "action", color: "", src: Gems, amount: 50, value: 0 },
-    { name: "action-100", category: "action", color: "", src: Gems, amount: 100, value: 0 },
-    { name: "action-500", category: "action", color: "blue", src: Gems, amount: 500, value: 0 },
-    { name: "action-1,000", category: "action", color: "purple", src: Gems, amount: 1000, value: 0 },
+    { name: "action-50", category: "action", color: "", src: ActionPoint, amount: 50, value: 0 },
+    { name: "action-100", category: "action", color: "", src: ActionPoint, amount: 100, value: 0 },
+    { name: "action-500", category: "action", color: "blue", src: ActionPoint, amount: 500, value: 0 },
+    { name: "action-1,000", category: "action", color: "purple", src: ActionPoint, amount: 1000, value: 0 },
 ]
