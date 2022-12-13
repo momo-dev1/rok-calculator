@@ -1,7 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import Food from "./resources/food.webp";
 import Gold from "./resources/gold.webp";
-import Gems from "./resources/gems.webp";
 import Might from "./resources/might.webp";
 import Rock from "./resources/rock.webp";
 import Timber from "./resources/timber.webp";
@@ -27,13 +26,7 @@ export const GoldIcon = () => {
     </div>
   );
 };
-export const GemsIcon = () => {
-  return (
-    <div className="w-10 h-10">
-      <img width={118} height={101} src={Gems.src} alt="gems icon" />
-    </div>
-  );
-};
+
 export const MightIcon = () => {
   return (
     <div className="w-10 h-10">

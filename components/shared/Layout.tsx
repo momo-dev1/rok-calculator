@@ -27,10 +27,7 @@ const Layout = ({
   }, [dispatch]);
 
   return (
-    <div
-      ref={layoutRef}
-      className="flex flex-col min-h-[calc(100vh-70px)] gap-8 w-full"
-    >
+    <div ref={layoutRef} className="flex flex-col gap-8 w-full">
       <Head>
         <title>{title}</title>
         <meta charSet="utf-8" />
@@ -62,10 +59,7 @@ const Layout = ({
         <meta name="application-name" content="rok-calc" />
         <meta name="msapplication-TileColor" content="#ffc40d" />
         <meta name="theme-color" content="#ffffff" />
-        <link
-          rel="canonical"
-          href={`https://rok-calc.com/${canonical}`}
-        />
+        <link rel="canonical" href={`https://rok-calc.com/${canonical}`} />
         <meta name="robots" content="all" />
         <meta key="description" name="description" content={description} />
         <meta name="keywords" content={keywords} />

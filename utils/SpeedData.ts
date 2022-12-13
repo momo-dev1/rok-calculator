@@ -3,7 +3,9 @@ import {
     training_speedup_icon,
     healing_speedup_icon,
     research_speedup_icon,
-    universal_speedup_icon
+    universal_speedup_icon,
+    TomeExp,
+    Gems
 } from "../public/assets/speed"
 
 export const SpeedData = [
@@ -92,4 +94,24 @@ export const SpeedData = [
         ]
     },
 
+]
+
+export const SpeedOther = [
+    { name: "exp-100", category: "exp", color: "", src: TomeExp, amount: 100, value: 0 },
+    { name: "exp-500", category: "exp", color: "blue", src: TomeExp, amount: 500, value: 0 },
+    { name: "exp-1,000", category: "exp", color: "purple", src: TomeExp, amount: 1000, value: 0 },
+    { name: "exp-5,000", category: "exp", color: "purple", src: TomeExp, amount: 5000, value: 0 },
+    { name: "exp-10,000", category: "exp", color: "purple", src: TomeExp, amount: 10000, value: 0 },
+    { name: "exp-20,000", category: "exp", color: "orange", src: TomeExp, amount: 20000, value: 0 },
+    { name: "exp-50,000", category: "exp", color: "orange", src: TomeExp, amount: 50000, value: 0 },
+
+    { name: "gem-5", category: "gem", color: "", src: Gems, amount: 5, value: 0 },
+    { name: "gem-10", category: "gem", color: "", src: Gems, amount: 10, value: 0 },
+    { name: "gem-50", category: "gem", color: "", src: Gems, amount: 50, value: 0 },
+    { name: "gem-100", category: "gem", color: "blue", src: Gems, amount: 100, value: 0 },
+    { name: "gem-200", category: "gem", color: "blue", src: Gems, amount: 200, value: 0 },
+    { name: "gem-500", category: "gem", color: "blue", src: Gems, amount: 500, value: 0 },
+    { name: "gem-650", category: "gem", color: "purple", src: Gems, amount: 650, value: 0 },
+    { name: "gem-1,000", category: "gem", color: "purple", src: Gems, amount: 1000, value: 0 },
+    { name: "gem-2,000", category: "gem", color: "purple", src: Gems, amount: 2000, value: 0 },
 ]

@@ -8,10 +8,17 @@ const NavBar = () => {
   const [open, setOpen] = useState(false);
   const navigation = [
     { name: "MGE Training", path: "/mge-training/" },
-    { name: "Research", path: "/research/" },
+    // { name: "Research", path: "/research/" },
     { name: "Building", path: "/building/" },
     { name: "SpeedUps", path: "/speed-ups/" },
+    { name: "Other Calculators", path: "#" },
   ];
+
+  const dropDown = [
+    { name: "Tome of Knowledge", path: "/exp-calculator/" },
+    { name: "Gems", path: "/gems-calculator/" },
+  ];
+
   const { asPath } = useRouter();
 
   return (
@@ -96,21 +103,59 @@ const NavBar = () => {
             </button>
           </div>
 
-          <ul className="mb-5 border-t border-white lg:border-none lg:flex lg:items-center lg:ml-auto lg:mb-0">
+          <ul className="relative mb-5 border-t border-white lg:border-none lg:flex lg:items-center lg:ml-auto lg:mb-0">
             {navigation.map((item) => (
-              <Link key={item.name} href={item.path}>
-                <li
-                  onClick={() => setOpen(false)}
-                  className={`${
-                    (asPath.includes("research") && item.name === "Research") ||
-                    asPath === item.path
-                      ? "text-yellow-500"
-                      : "text-white"
-                  } lg:border-none border-b border-white py-3 px-5 cursor-pointer`}
-                >
-                  {item.name}
-                </li>
-              </Link>
+              <>
+                {item.name === "Other Calculators" ? (
+                  <li className="group text-white inline-block w-full lg:w-auto text-left lg:border-none border-b border-white py-3 px-5 cursor-pointer">
+                    <div className="flex items-center lg:hover:text-yellow-500">
+                      <h3>{item.name}</h3>
+
+                      <svg
+                        className="hidden lg:block -mr-1 ml-2 h-5 w-5 transform rotate-180 group-hover:rotate-0 duration-500"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                        aria-hidden="true"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                          clip-rule="evenodd"
+                        />
+                      </svg>
+                    </div>
+
+                    <div
+                      onClick={() => setOpen(false)}
+                      className="lg:opacity-0 lg:invisible group-hover:opacity-100 group-hover:visible lg:absolute right-0 z-10 mt-2 lg:w-56 origin-top-right rounded-md bg-darkCharcoal lg:border lg:shadow-2xl focus:outline-none p-2 duration-500 w-full"
+                    >
+                      {dropDown.map((d) => (
+                        <Link key={d.name} href={d.path}>
+                          <a className=" block px-4 py-2 text-sm hover:text-yellow-500">
+                            {d.name}
+                          </a>
+                        </Link>
+                      ))}
+                    </div>
+                  </li>
+                ) : (
+                  <Link key={item.name} href={item.path}>
+                    <li
+                      onClick={() => setOpen(false)}
+                      className={`${
+                        (asPath.includes("research") &&
+                          item.name === "Research") ||
+                        asPath === item.path
+                          ? "text-yellow-500"
+                          : "text-white"
+                      } lg:border-none border-b border-white py-3 px-5 cursor-pointer`}
+                    >
+                      {item.name}
+                    </li>
+                  </Link>
+                )}
+              </>
             ))}
           </ul>
         </nav>

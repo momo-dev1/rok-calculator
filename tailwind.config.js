@@ -15,6 +15,7 @@ module.exports = {
         'speed-frame': "url('/assets/speed/speedup_bg_frame.webp')",
         'speed-frame-blue': "url('/assets/speed/speedup_bg_frame-blue.webp')",
         'speed-frame-purple': "url('/assets/speed/speedup_bg_frame-purple.webp')",
+        'speed-frame-orange': "url('/assets/speed/speedup_bg_frame-orange.webp')",
         'banner-blue': "url('/assets/Banner-blue.webp')",
         'bg-building-blue': "url('/assets/bg_building_blue.webp')",
       },

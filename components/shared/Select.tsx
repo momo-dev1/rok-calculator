@@ -1,8 +1,4 @@
 import { useDispatch } from "react-redux";
-import {
-  setLevel as setResearchLevel,
-  sumResources as sumResearchResources,
-} from "@/store/researchSlice";
 
 import {
   setLevel as setBuildingsLevel,
@@ -37,8 +33,8 @@ const Select = ({
       dispatch(setBuildingsLevel({ name, value, label }));
       dispatch(sumBuildingsResources({ name, label }));
     } else {
-      dispatch(setResearchLevel({ name, value, label }));
-      dispatch(sumResearchResources({ name, label }));
+      // dispatch(setResearchLevel({ name, value, label }));
+      // dispatch(sumResearchResources({ name, label }));
     }
   };
 

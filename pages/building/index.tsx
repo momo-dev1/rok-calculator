@@ -22,7 +22,8 @@ const BuildingsPage: NextPage = () => {
     useSelector((state: any) => state.buildings);
   const { offset } = useSelector((state: any) => state.global);
   const dispatch = useDispatch();
-  const categoriesNames = ["Economic", "Military", "Others"];
+  const categoriesNames = ["Economic"];
+  // "Military", "Others"
 
   useEffect(() => {
     dispatch(totalResources());
@@ -35,7 +36,10 @@ const BuildingsPage: NextPage = () => {
     if (value.length >= maxLength) {
       value = value.substring(0, maxLength);
     }
-    if (value < 0) return 0;
+    console.log(value);
+    if (!value || value < 0) {
+      value = 1;
+    }
     dispatch(setQty({ name, value }));
   };
 
@@ -75,9 +79,9 @@ const BuildingsPage: NextPage = () => {
       </HowToUse>
 
       <Layout
-        title="Building Calculator"
-        description="Lords Mobile Building Calculator & Construction Develop your buildings for its best utility. Calculate the time and resources you need"
-        keywords="building caluclator,lords mobile,construction,lm,rss,time,speeds,might,resources,battle hall,prison,altar,unlock t4,castle,wall,academy,workshop,watch tower,treasure trove,barracks,infirmary,manor,lunar,farm,hyper,food,gym,buildings comps"
+        title="Building Calculator | Rise of Kingdoms (RoK)"
+        description="Rise of Kingdoms (RoK) - Building Calculator. The tool helps calculate time and resources you need to upgrade buildings."
+        keywords="rise of kingdoms calculator, rok calculator, rok training, rok troops training, rok healing, rok calculate healing, rok calculate resources, rok calculate speedup, rok speedups, rok resources, rise of kindgdom healing calculator, rise of kingdom calculate resources, rise of kingdom calculate speedup"
         canonical="/building/"
       >
         <>
@@ -108,7 +112,7 @@ const BuildingsPage: NextPage = () => {
                     {categoryName}
                   </h2>
                 </div>
-                <div className="gap-14 xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 md:px-10 grid items-end justify-center grid-cols-2 mt-2 p-3">
+                <div className="grid gap-8 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 items-end justify-center mt-8 pb-10">
                   {buildings
                     .filter((item: any) => item.category === categoryName)
                     .map((building: any, idx: number) => (

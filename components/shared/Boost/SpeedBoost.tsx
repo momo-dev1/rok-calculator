@@ -1,5 +1,4 @@
 import { useDispatch } from "react-redux";
-import { setResearchSpeedBoost } from "@/store/researchSlice";
 import { setTroopsSpeedBoost } from "@/store/tropsSlice";
 import { setbuildingsSpeedBoost } from "@/store/buildingsSlice";
 
@@ -20,8 +19,6 @@ const SpeedBoost = ({ name, title, value }: Props) => {
     if (+value < 0) return 0;
     if (name === "troops") {
       dispatch(setTroopsSpeedBoost({ value }));
-    } else if (name === "research") {
-      dispatch(setResearchSpeedBoost({ value }));
     } else if (name === "buildings") {
       dispatch(setbuildingsSpeedBoost({ value }));
     }

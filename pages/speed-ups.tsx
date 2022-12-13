@@ -42,7 +42,7 @@ const Speed = () => {
 
       <Layout
         title="SpeedUps Calculator | Rise of Kingdoms (RoK)"
-        description="Rise of Kingdoms (RoK) - Speedup Calculator. Calculate how many speedups you have in your bag."
+        description="Rise of Kingdoms (RoK) - Gem Packs Calculator. Calculate how many gems you have in your bag."
         keywords="rise of kingdoms calculator, rok calculator, rok training, rok troops training, rok healing, rok calculate healing, rok calculate resources, rok calculate speedup, rok speedups, rok resources, rise of kindgdom healing calculator, rise of kingdom calculate resources, rise of kingdom calculate speedup "
         canonical="speed-ups/"
       >
@@ -66,7 +66,7 @@ const Speed = () => {
             {speed.map((item: any, index: number) => {
               return (
                 <div key={index} className="text-center py-4">
-                  <h3 className="font-audiowide text-shadow my-3 text-2xl font-extrabold tracking-wider text-green-400">
+                  <h3 className="font-audiowide text-shadow my-3 text-2xl font-extrabold tracking-wider text-yellow-400">
                     {item.name}
                   </h3>
                   <div className="flex flex-wrap justify-center px-8 ">

@@ -13,6 +13,7 @@ import SpeedUp from "./shared/Boost/SpeedUp";
 import Subsidy from "./shared/Boost/Subsidy";
 
 import SpeedCard from "./speed/SpeedCard";
+import SpeedOtherCard from "./speed/SpeedOtherCard";
 import TroopsTier from "./troops/TroopsTier";
 import ResearchCard from "./research/ResearchCard";
 import Building from "./building/Building";
@@ -34,4 +35,5 @@ export {
     TroopsTier,
     ScrollToTop,
     ResearchCard,
+    SpeedOtherCard
 };

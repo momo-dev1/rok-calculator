@@ -9,7 +9,7 @@ type Props = {
 
 const Building = ({ item, handleInputChange }: Props) => {
   return (
-    <div className="my-5 text-center">
+    <div className="text-center">
       <figure className="relative flex flex-col items-center">
         <div className="h-[140px] w-full bg-bg-building-blue object-cover object-center">
           <div className="flex items-center justify-center p-1 h-full ">
@@ -26,20 +26,18 @@ const Building = ({ item, handleInputChange }: Props) => {
             className={`${
               item.qty > 1 ? "text-yellow-300" : "text-white"
             } flex-shrink-0 text-center bg-zinc-600 outline-none font-semibold py-1 border border-yellow-500 w-10 top-0 right-0 absolute`}
-            type="number"
+            type="string"
             name={item.name}
             autoComplete="off"
             maxLength={2}
-            value={item.qty.toString()}
+            value={item.qty}
             onChange={handleInputChange}
             onFocus={(e) => e.target.select()}
           />
         </div>
 
         <div className="bg-zinc-600 md:py-1 py-[2px] w-full px-2">
-          <h3 className="text-[10px] md:text-md md:text-lg text-shadow text-gray-200">
-            {item.name}
-          </h3>
+          <h3 className="text-xs  md:text-base text-gray-200">{item.name}</h3>
         </div>
 
         <div className="flex w-full">
