@@ -29,7 +29,7 @@ const ActioPointsCalculator = () => {
 
   return (
     <>
-      <HowToUse title="Tome of Knowledge (Exp) Calculator">
+      <HowToUse title="Action Points Recovery Calculator">
         <div className="text-md md:text-lg space-y-2 text-gray-100">
           <p>
             Enter the amount of tome of knowledge (Exp), and the total should be
