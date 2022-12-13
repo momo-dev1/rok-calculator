@@ -86,13 +86,11 @@ const Home: NextPage = () => {
                   <p className="text-xs md:text-sm text-gray-300 mb-2">
                     {item.text}
                   </p>
-                  <figure className="cursor-pointer">
-                    <img
-                      width={800}
-                      height={412}
-                      src={item.src.src}
-                      alt={item.name}
-                    />
+                  <figure
+                    className="text-center cursor-pointer 
+                    h-full w-full bg-blue-300 rounded-md backdrop-filter backdrop-blur-lg bg-opacity-10 border border-gray-400 p-8"
+                  >
+                    <h2 className="text-3xl">{item.name}</h2>
                   </figure>
                 </div>
               </a>

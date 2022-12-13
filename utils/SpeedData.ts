@@ -4,8 +4,9 @@ import {
     healing_speedup_icon,
     research_speedup_icon,
     universal_speedup_icon,
+    ActionPoint,
     TomeExp,
-    Gems
+    Gems,
 } from "../public/assets/speed"
 
 export const SpeedData = [
@@ -114,4 +115,9 @@ export const SpeedOther = [
     { name: "gem-650", category: "gem", color: "purple", src: Gems, amount: 650, value: 0 },
     { name: "gem-1,000", category: "gem", color: "purple", src: Gems, amount: 1000, value: 0 },
     { name: "gem-2,000", category: "gem", color: "purple", src: Gems, amount: 2000, value: 0 },
+
+    { name: "action-50", category: "action", color: "", src: Gems, amount: 50, value: 0 },
+    { name: "action-100", category: "action", color: "", src: Gems, amount: 100, value: 0 },
+    { name: "action-500", category: "action", color: "blue", src: Gems, amount: 500, value: 0 },
+    { name: "action-1,000", category: "action", color: "purple", src: Gems, amount: 1000, value: 0 },
 ]

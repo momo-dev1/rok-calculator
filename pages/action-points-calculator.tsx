@@ -4,7 +4,7 @@ import { ClearBtn, Layout, SpeedOtherCard, HowToUse } from "@/components/index";
 import { sumCount, clearValues } from "@/store/speedOtherSlice";
 import { formatResources } from "@/utils/helpers";
 
-const GemsPackCalculator = () => {
+const ActioPointsCalculator = () => {
   const [sticky, setSticky] = useState<boolean>(false);
   const { speedOther, amount } = useSelector((state: any) => state.speedOther);
   const { offset } = useSelector((state: any) => state.global);
@@ -29,26 +29,24 @@ const GemsPackCalculator = () => {
 
   return (
     <>
-      <HowToUse title="Gem Packs Calculator">
+      <HowToUse title="Tome of Knowledge (Exp) Calculator">
         <div className="text-md md:text-lg space-y-2 text-gray-100">
           <p>
-            Enter the amount of Gems, and the total should be calculated
-            automatically
+            Enter the amount of tome of knowledge (Exp), and the total should be
+            calculated automatically
           </p>
           <div className="space-y-2">
             <p className="text-2xl text-shadow text-yellow-400">
               • Description •
             </p>
-            <p>
-              The Gem items reward you with a certain amount of gem resources.
-            </p>
+            <p>Restores a certain amount of Action Points.</p>
           </div>
         </div>
       </HowToUse>
 
       <Layout
-        title="Gem Packs Calculator | Rise of Kingdoms (RoK)"
-        description="Rise of Kingdoms (RoK) - Exp calculator. Calculate how many tome of knowledge you have in your inventory."
+        title="Action Points Recovery Calculator | Rise of Kingdoms (RoK)"
+        description="Rise of Kingdoms (RoK) - Action Points calculator. Calculate how many action points you have in your  inventory."
         keywords="rise of kingdoms calculator, rok calculator, rok training, rok troops training, rok healing, rok calculate healing, rok calculate resources, rok calculate speedup, rok speedups, rok resources, rise of kindgdom healing calculator, rise of kingdom calculate resources, rise of kingdom calculate speedup "
         canonical="exp-calculator/"
       >
@@ -68,9 +66,8 @@ const GemsPackCalculator = () => {
           </div>
           <div className="flex flex-wrap justify-center px-8 ">
             {speedOther
-              .filter((item: any) => item.category === "gem")
+              .filter((item: any) => item.category === "action")
               .map((speedItem: any, index: number) => {
-                console.log(speedItem.name);
                 return (
                   <SpeedOtherCard
                     key={index}
@@ -88,4 +85,4 @@ const GemsPackCalculator = () => {
   );
 };
 
-export default GemsPackCalculator;
+export default ActioPointsCalculator;

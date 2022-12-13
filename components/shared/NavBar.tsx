@@ -9,14 +9,15 @@ const NavBar = () => {
   const navigation = [
     { name: "MGE Training", path: "/mge-training/" },
     // { name: "Research", path: "/research/" },
-    { name: "Building", path: "/building/" },
-    { name: "SpeedUps", path: "/speed-ups/" },
+    { name: "Building", path: "/building-calculator/" },
+    { name: "SpeedUps", path: "/speedups-calculator/" },
     { name: "Other Calculators", path: "#" },
   ];
 
   const dropDown = [
     { name: "Tome of Knowledge", path: "/exp-calculator/" },
     { name: "Gems", path: "/gems-calculator/" },
+    { name: "Action Points", path: "/action-points-calculator/" },
   ];
 
   const { asPath } = useRouter();

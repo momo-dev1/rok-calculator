@@ -42,7 +42,7 @@ const Speed = () => {
 
       <Layout
         title="SpeedUps Calculator | Rise of Kingdoms (RoK)"
-        description="Rise of Kingdoms (RoK) - Gem Packs Calculator. Calculate how many gems you have in your bag."
+        description="Rise of Kingdoms (RoK) - Gem Packs Calculator. Calculate how many gems you have in your inventory."
         keywords="rise of kingdoms calculator, rok calculator, rok training, rok troops training, rok healing, rok calculate healing, rok calculate resources, rok calculate speedup, rok speedups, rok resources, rise of kindgdom healing calculator, rise of kingdom calculate resources, rise of kingdom calculate speedup "
         canonical="speed-ups/"
       >
