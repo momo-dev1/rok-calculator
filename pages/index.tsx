@@ -62,7 +62,7 @@ const Home: NextPage = () => {
           property="og:description"
           content="rok-calculator helps to calculate resource packs, building, speedups, healing, and tomes of knowledge."
         />
-        <meta property="og:image" content="/public/assets/lodscalcog.webp" />
+        <meta property="og:image" content="/public/assets/rok-og.webp" />
         <meta name="author" content="MomoLk" />
       </Head>
 

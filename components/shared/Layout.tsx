@@ -71,7 +71,7 @@ const Layout = ({
         <meta property="og:image:height" content="692" />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
-        <meta property="og:image" content="/public/assets/lodscalcog.webp" />
+        <meta property="og:image" content="/public/assets/rok-og.webp" />
       </Head>
 
       <ScrollToTop />

@@ -53,7 +53,7 @@ const ContactUs = () => {
           property="og:description"
           content="Rise of Kingdoms | Contact Us"
         />
-        <meta property="og:image" content="/public/assets/lodscalcog.webp" />
+        <meta property="og:image" content="/public/assets/rok-og.webp" />
       </Head>
 
       <section className="flex items-center justify-center">

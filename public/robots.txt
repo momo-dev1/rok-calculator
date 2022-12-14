@@ -6,4 +6,4 @@ Allow: /
 Host: https://rok-calc.com/
 
 # Sitemaps
-Sitemap: https://rok-calc.com/sitemap.xml
+Sitemap: https://rok-calc.com/sitemap-0.xml

@@ -7,17 +7,17 @@ import Logo from "/public/assets/logo.png";
 const NavBar = () => {
   const [open, setOpen] = useState(false);
   const navigation = [
-    { name: "MGE Training", path: "/mge-training/" },
+    { name: "MGE Training", path: "/mge-training" },
     // { name: "Research", path: "/research/" },
-    { name: "Building", path: "/building-calculator/" },
-    { name: "SpeedUps", path: "/speedups-calculator/" },
+    { name: "Building", path: "/building-calculator" },
+    { name: "SpeedUps", path: "/speedups-calculator" },
     { name: "Other Calculators", path: "#" },
   ];
 
   const dropDown = [
-    { name: "Tome of Knowledge", path: "/exp-calculator/" },
+    { name: "Tome of Knowledge", path: "/exp-calculator" },
     { name: "Gems", path: "/gems-calculator/" },
-    { name: "Action Points", path: "/action-points-calculator/" },
+    { name: "Action Points", path: "/action-points-calculator" },
   ];
 
   const { asPath } = useRouter();
