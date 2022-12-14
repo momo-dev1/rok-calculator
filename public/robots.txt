@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://.com/
+Host: https://rok-calc.com/
 
 # Sitemaps
-Sitemap: https://.com/sitemap.xml
+Sitemap: https://rok-calc.com/sitemap.xml
