@@ -89,7 +89,7 @@ const Troops: NextPage = () => {
         title="Troops Training Calculator | Rise of Kingdoms (RoK)"
         description="Rise of Kingdoms (RoK) - Troop Training Calculator Figure out the number of minutes and resources needed to train troops."
         keywords="rise of kingdoms calculator, rok calculator, rok training, rok troops training, rok healing, rok calculate healing, rok calculate resources, rok calculate speedup, rok speedups, rok resources, rise of kindgdom healing calculator, rise of kingdom calculate resources, rise of kingdom calculate speedup"
-        canonical="mge-training/"
+        canonical="mge-training"
       >
         <>
           <div className="flex flex-wrap items-center justify-center gap-6 mb-2">

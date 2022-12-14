@@ -51,7 +51,7 @@ const ContactUs = () => {
         <meta property="og:title" content="Contact Us" />
         <meta
           property="og:description"
-          content="Rise of Kingdoms | Contact Us"
+          content="Contact Us | Rise of Kingdoms"
         />
         <meta property="og:image" content="/public/assets/rok-og.webp" />
       </Head>

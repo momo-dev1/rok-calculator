@@ -48,7 +48,7 @@ const ActioPointsCalculator = () => {
         title="Action Points Recovery Calculator | Rise of Kingdoms (RoK)"
         description="Rise of Kingdoms (RoK) - Action Points calculator. Calculate how many action points you have in your  inventory."
         keywords="rise of kingdoms calculator, rok calculator, rok training, rok troops training, rok healing, rok calculate healing, rok calculate resources, rok calculate speedup, rok speedups, rok resources, rise of kindgdom healing calculator, rise of kingdom calculate resources, rise of kingdom calculate speedup "
-        canonical="exp-calculator/"
+        canonical="action-points-calculator"
       >
         <>
           <div

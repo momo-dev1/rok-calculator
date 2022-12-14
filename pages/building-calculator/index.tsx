@@ -82,7 +82,7 @@ const BuildingsPage: NextPage = () => {
         title="Building Calculator | Rise of Kingdoms (RoK)"
         description="Rise of Kingdoms (RoK) - Building Calculator. The tool helps calculate time and resources you need to upgrade buildings."
         keywords="rise of kingdoms calculator, rok calculator, rok training, rok troops training, rok healing, rok calculate healing, rok calculate resources, rok calculate speedup, rok speedups, rok resources, rise of kindgdom healing calculator, rise of kingdom calculate resources, rise of kingdom calculate speedup"
-        canonical="/building/"
+        canonical="building-calculator"
       >
         <>
           <div className="flex items-center justify-center flex-wrap gap-4 mb-2">

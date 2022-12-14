@@ -48,7 +48,7 @@ const ExpCalculator = () => {
         title="Exp Calculator | Rise of Kingdoms (RoK)"
         description="Rise of Kingdoms (RoK) - Exp calculator. Calculate how many tome of knowledge you have in your inventory."
         keywords="rise of kingdoms calculator, rok calculator, rok training, rok troops training, rok healing, rok calculate healing, rok calculate resources, rok calculate speedup, rok speedups, rok resources, rise of kindgdom healing calculator, rise of kingdom calculate resources, rise of kingdom calculate speedup "
-        canonical="exp-calculator/"
+        canonical="exp-calculator"
       >
         <>
           <div
