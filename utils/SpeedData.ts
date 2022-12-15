@@ -100,11 +100,11 @@ export const SpeedData = [
 export const SpeedOther = [
     { name: "exp-100", category: "exp", color: "", src: TomeExp, amount: 100, value: 0 },
     { name: "exp-500", category: "exp", color: "blue", src: TomeExp, amount: 500, value: 0 },
-    { name: "exp-1,000", category: "exp", color: "purple", src: TomeExp, amount: 1000, value: 0 },
-    { name: "exp-5,000", category: "exp", color: "purple", src: TomeExp, amount: 5000, value: 0 },
-    { name: "exp-10,000", category: "exp", color: "purple", src: TomeExp, amount: 10000, value: 0 },
-    { name: "exp-20,000", category: "exp", color: "orange", src: TomeExp, amount: 20000, value: 0 },
-    { name: "exp-50,000", category: "exp", color: "orange", src: TomeExp, amount: 50000, value: 0 },
+    { name: "exp-1k", category: "exp", color: "purple", src: TomeExp, amount: 1000, value: 0 },
+    { name: "exp-5k", category: "exp", color: "purple", src: TomeExp, amount: 5000, value: 0 },
+    { name: "exp-10k", category: "exp", color: "purple", src: TomeExp, amount: 10000, value: 0 },
+    { name: "exp-20k", category: "exp", color: "orange", src: TomeExp, amount: 20000, value: 0 },
+    { name: "exp-50k", category: "exp", color: "orange", src: TomeExp, amount: 50000, value: 0 },
 
     { name: "gem-5", category: "gem", color: "", src: Gems, amount: 5, value: 0 },
     { name: "gem-10", category: "gem", color: "", src: Gems, amount: 10, value: 0 },
@@ -113,11 +113,13 @@ export const SpeedOther = [
     { name: "gem-200", category: "gem", color: "blue", src: Gems, amount: 200, value: 0 },
     { name: "gem-500", category: "gem", color: "blue", src: Gems, amount: 500, value: 0 },
     { name: "gem-650", category: "gem", color: "purple", src: Gems, amount: 650, value: 0 },
-    { name: "gem-1,000", category: "gem", color: "purple", src: Gems, amount: 1000, value: 0 },
-    { name: "gem-2,000", category: "gem", color: "purple", src: Gems, amount: 2000, value: 0 },
+    { name: "gem-1k", category: "gem", color: "purple", src: Gems, amount: 1000, value: 0 },
+    { name: "gem-2k", category: "gem", color: "purple", src: Gems, amount: 2000, value: 0 },
 
     { name: "action-50", category: "action", color: "", src: ActionPoint, amount: 50, value: 0 },
     { name: "action-100", category: "action", color: "", src: ActionPoint, amount: 100, value: 0 },
     { name: "action-500", category: "action", color: "blue", src: ActionPoint, amount: 500, value: 0 },
-    { name: "action-1,000", category: "action", color: "purple", src: ActionPoint, amount: 1000, value: 0 },
+    { name: "action-1k", category: "action", color: "purple", src: ActionPoint, amount: 1000, value: 0 },
+
+    
 ]

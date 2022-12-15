@@ -73,14 +73,30 @@ const Troops: NextPage = () => {
             <li>
               <span>2- Max troop training buff is 103%</span>
               <div className="mt-1 ml-5 text-gray-300 text-sm space-y-1">
-                <p>- Vip : 25%</p>
-                <p>- Tech : 20%</p>
-                <p>- Rune : 7% ~ 15%</p>
-                <p>- Title (Duke) : 10%</p>
-                <p>- Kindom buff : 10%</p>
-                <p>- City skin (Heliopolis) : 3%</p>
-                <p>- Civilization (Germany, Britain): 5%</p>
-                <p>- Alliance holy site (Shrine of war, Storm Altar) : 15%</p>
+                <p>
+                  - Alliance holy site (Shrine of war, Storm Altar) : <b>15%</b>
+                </p>
+                <p>
+                  - Civilization (Germany, Britain): <b>5%</b>
+                </p>
+                <p>
+                  - City skin (Heliopolis) : <b>3%</b>
+                </p>
+                <p>
+                  - Kindom buff : <b>10%</b>
+                </p>
+                <p>
+                  - Title (Duke) : <b>10%</b>
+                </p>
+                <p>
+                  - Rune : <b>7%</b> ~ <b>15%</b>
+                </p>
+                <p>
+                  - Tech : <b>20%</b>
+                </p>
+                <p>
+                  - Vip : <b>25%</b>
+                </p>
               </div>
             </li>
           </ul>

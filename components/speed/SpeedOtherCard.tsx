@@ -32,6 +32,14 @@ const SpeedOtherCard = ({ name, color, src, value }: Props) => {
     itemName = name.replace("gem-", "");
   } else if (name.includes("action-")) {
     itemName = name.replace("action-", "");
+  } else if (name.includes("food-")) {
+    itemName = name.replace("food-", "");
+  } else if (name.includes("wood-")) {
+    itemName = name.replace("wood-", "");
+  } else if (name.includes("stone-")) {
+    itemName = name.replace("stone-", "");
+  } else if (name.includes("gold-")) {
+    itemName = name.replace("gold-", "");
   } else {
     itemName = name;
   }

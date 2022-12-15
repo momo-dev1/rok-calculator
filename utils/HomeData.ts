@@ -32,7 +32,7 @@ export const HomeList = [
         name: "Resource Calculator",
         text: "Find out how many of resources contained in each pack.",
         src: ResourceChest,
-        url: "/exp-calculator"
+        url: "/resource-calculator"
     },
 
     {
