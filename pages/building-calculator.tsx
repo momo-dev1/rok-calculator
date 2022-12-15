@@ -18,11 +18,20 @@ import {
 } from "public/assets";
 
 const BuildingsPage: NextPage = () => {
-  const { buildings, food, rock, timber, power, time, speedBoost } =
-    useSelector((state: any) => state.buildings);
+  const {
+    buildings,
+    food,
+    rock,
+    timber,
+    power,
+    time,
+    arrow,
+    blueprint,
+    speedBoost,
+  } = useSelector((state: any) => state.buildings);
   const { offset } = useSelector((state: any) => state.global);
   const dispatch = useDispatch();
-  const categoriesNames = ["Economic"];
+  const categoriesNames = ["Economic", "Others"];
   // "Military", "Others"
 
   useEffect(() => {
@@ -36,7 +45,6 @@ const BuildingsPage: NextPage = () => {
     if (value.length >= maxLength) {
       value = value.substring(0, maxLength);
     }
-    console.log(value);
     if (!value || value < 0) {
       value = 1;
     }
@@ -100,6 +108,8 @@ const BuildingsPage: NextPage = () => {
             timber={timber}
             time={time}
             power={power}
+            arrow={arrow}
+            blueprint={blueprint}
             speedBoost={speedBoost}
             bgColor="rgb(158 158 52 / .2)"
             currentScroll={offset}

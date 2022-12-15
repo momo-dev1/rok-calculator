@@ -11,7 +11,12 @@ import TradingPost from './economic/Building_Trading_Post.webp'
 import LyceumOfWisdom from './economic/Building_Lyceum_of_Wisdom.webp'
 import CourierStation from './economic/Building_Courier_Station.webp'
 
+import CityHall from './others/Building_City_Hall_1_5.webp'
+import Wall from './others/Building_Wall_6_4.webp'
+import WatchTower from './others/Building_Watchtower_6_4.webp'
+
 export {
     Farm, LumberMill, Quarry, GoldMine, Academy, StoreHouse, AllianceCenter, BuilderHut, Shop,
-    TradingPost, LyceumOfWisdom, CourierStation
+    TradingPost, LyceumOfWisdom, CourierStation, CityHall, Wall, WatchTower
+
 }

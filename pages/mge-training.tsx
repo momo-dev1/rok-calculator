@@ -62,8 +62,10 @@ const Troops: NextPage = () => {
             Adjust the Training Speed Buff{" "}
             <span className="text-sm">(Optional)</span>
           </p>
-          <ol className="space-y-2">
-            <p className="text-2xl text-shadow text-yellow-400">• Note •</p>
+          <ul className="space-y-2">
+            <li>
+              <p className="text-2xl text-shadow text-yellow-400">• Note •</p>
+            </li>
             <li>
               1- Your total troop training buff can be found by going to your
               city hall and clicking on the graph icon.
@@ -81,13 +83,13 @@ const Troops: NextPage = () => {
                 <p>- Alliance holy site (Shrine of war, Storm Altar) : 15%</p>
               </div>
             </li>
-          </ol>
+          </ul>
         </div>
       </HowToUse>
 
       <Layout
         title="Troops Training Calculator | Rise of Kingdoms (RoK)"
-        description="Rise of Kingdoms (RoK) - Troop Training Calculator Figure out the number of minutes and resources needed to train troops."
+        description="Rise of Kingdoms (RoK) - Troops Training Calculator Figure out the number of minutes and resources needed to train troops."
         keywords="rise of kingdoms calculator, rok calculator, rok training, rok troops training, rok healing, rok calculate healing, rok calculate resources, rok calculate speedup, rok speedups, rok resources, rise of kindgdom healing calculator, rise of kingdom calculate resources, rise of kingdom calculate speedup"
         canonical="mge-training"
       >

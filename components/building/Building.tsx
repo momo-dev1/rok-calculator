@@ -27,6 +27,7 @@ const Building = ({ item, handleInputChange }: Props) => {
               item.qty > 1 ? "text-yellow-300" : "text-white"
             } flex-shrink-0 text-center bg-zinc-600 outline-none font-semibold py-1 border border-yellow-500 w-10 top-0 right-0 absolute`}
             type="string"
+            id={item.name}
             name={item.name}
             autoComplete="off"
             maxLength={2}
@@ -37,7 +38,12 @@ const Building = ({ item, handleInputChange }: Props) => {
         </div>
 
         <div className="bg-zinc-600 md:py-1 py-[2px] w-full px-2">
-          <h3 className="text-xs  md:text-base text-gray-200">{item.name}</h3>
+          <label
+            htmlFor={item.name}
+            className="text-xs  md:text-base text-gray-200"
+          >
+            {item.name}
+          </label>
         </div>
 
         <div className="flex w-full">

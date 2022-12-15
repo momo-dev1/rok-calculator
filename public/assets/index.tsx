@@ -1,7 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 import Food from "./resources/food.webp";
 import Gold from "./resources/gold.webp";
-import Might from "./resources/might.webp";
+import Arrow from "./resources/arrow.webp";
+import BluePrint from "./resources/blueprint.webp";
 import Rock from "./resources/rock.webp";
 import Timber from "./resources/timber.webp";
 import Time from "./resources/time.webp";
@@ -27,10 +28,30 @@ export const GoldIcon = () => {
   );
 };
 
-export const MightIcon = () => {
+export const ArrowIcon = () => {
   return (
-    <div className="w-10 h-10">
-      <img width={118} height={101} src={Might.src} alt="might icon" />
+    <div className="flex items-center justify-center w-10 h-10 bg-speed-frame bg-contain">
+      <img
+        className="w-6 h-6"
+        width={24}
+        height={24}
+        src={Arrow.src}
+        alt="arrow icon"
+      />
+    </div>
+  );
+};
+
+export const BluePrintIcon = () => {
+  return (
+    <div className="flex items-center justify-center w-10 h-10 bg-speed-frame bg-contain">
+      <img
+        className="w-6 h-6"
+        width={24}
+        height={24}
+        src={BluePrint.src}
+        alt="blueprint icon"
+      />
     </div>
   );
 };
@@ -60,7 +81,7 @@ export const TimeIcon = () => {
 export const FromIcon = () => {
   return (
     <div className="flex items-center w-14 relative h-12">
-      <img src={From.src} alt="From icon" />
+      <img width={56} height={18} src={From.src} alt="From icon" />
     </div>
   );
 };
@@ -68,7 +89,7 @@ export const FromIcon = () => {
 export const FromFiveIcon = () => {
   return (
     <div className="flex items-center w-14 relative h-12 ">
-      <img src={FromFive.src} alt="FromFive icon" />
+      <img width={56} height={18} src={FromFive.src} alt="FromFive icon" />
     </div>
   );
 };
@@ -76,7 +97,7 @@ export const FromFiveIcon = () => {
 export const GoalIcon = () => {
   return (
     <div className="flex items-center w-14 relative h-12">
-      <img src={Goal.src} alt="Goal icon" />
+      <img width={56} height={18} src={Goal.src} alt="Goal icon" />
     </div>
   );
 };
@@ -84,7 +105,12 @@ export const GoalIcon = () => {
 export const BuildingCountIcon = () => {
   return (
     <div className="relative w-10 h-10">
-      <img src={BuildingCount.src} alt="BuildingCount icon" />
+      <img
+        width={40}
+        height={44}
+        src={BuildingCount.src}
+        alt="BuildingCount icon"
+      />
     </div>
   );
 };

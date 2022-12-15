@@ -16,7 +16,7 @@ const SpeedUp = ({ name, value }: Props) => {
   return (
     <form>
       <div className="flex items-start justify-center gap-2 text-sm font-semibold text-white md:text-lg">
-        <label htmlFor="">Speed Ups:</label>
+        <label htmlFor="SpeedUp">Speed Ups:</label>
         <input
           maxLength={3}
           className={`w-[80px] md:max-w-[100px] bg-transparent ${
@@ -24,6 +24,7 @@ const SpeedUp = ({ name, value }: Props) => {
           } text-center shadow-neumorphic rounded-md outline-none`}
           name="SpeedUp"
           value={value}
+          id="SpeedUp"
           type="number"
           onChange={handleInputChange}
           onFocus={(e) => e.target.select()}

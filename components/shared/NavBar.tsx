@@ -2,13 +2,13 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import Logo from "/public/assets/logo.png";
+import Logo from "/public/assets/logo.webp";
 
 const NavBar = () => {
   const [open, setOpen] = useState(false);
   const navigation = [
     { name: "MGE Training", path: "/mge-training" },
-    // { name: "Research", path: "/research/" },
+    { name: "Troops Healing", path: "/troops-healing" },
     { name: "Building", path: "/building-calculator" },
     { name: "SpeedUps", path: "/speedups-calculator" },
     { name: "Other Calculators", path: "#" },
@@ -120,9 +120,9 @@ const NavBar = () => {
                         aria-hidden="true"
                       >
                         <path
-                          fill-rule="evenodd"
+                          fillRule="evenodd"
                           d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-                          clip-rule="evenodd"
+                          clipRule="evenodd"
                         />
                       </svg>
                     </div>

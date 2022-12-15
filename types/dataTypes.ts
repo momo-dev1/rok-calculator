@@ -50,6 +50,7 @@ export type Building = {
     power: number[]
     time: number[]
     level: number[]
+    blueprint: number[]
     qty: number
     start: number
     end: number
@@ -57,6 +58,8 @@ export type Building = {
     totalRock: number
     totalTimber: number
     totalPower: number
+    totalBluePrint: number,
+    totalArrow: number,
     totalTime: number
 }
 
@@ -66,6 +69,8 @@ export interface buildingsInitialState {
     timber: number
     time: number
     power: number
+    blueprint: number
+    arrow: number
     speedBoost: number
     buildings: Building[]
 }

@@ -40,9 +40,12 @@ const TroopsTier = ({
                 />
               </div>
 
-              <p className="bg-blue-400/40 text-white text-shadow py-1 w-full">
+              <label
+                htmlFor={item.name}
+                className="bg-blue-400/40 text-white text-shadow py-1 w-full"
+              >
                 {item.name}
-              </p>
+              </label>
 
               <p className="bg-blue-400/40 pb-1 text-xs text-white text-shadow w-full">
                 {item?.only}
@@ -53,6 +56,7 @@ const TroopsTier = ({
                   tierType[idx].qty > 0 ? "text-yellow-300" : "text-white"
                 } text-center bg-blue-400/5 outline-none font-semibold rounded-b-md py-1 border border-blue-400 w-full`}
                 type="text"
+                id={item.name}
                 name={item.name}
                 maxLength={11}
                 value={tierType[idx].qty.toLocaleString()}

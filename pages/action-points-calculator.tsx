@@ -1,10 +1,11 @@
+import type { NextPage } from "next";
 import { useCallback, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { ClearBtn, Layout, SpeedOtherCard, HowToUse } from "@/components/index";
 import { sumCount, clearValues } from "@/store/speedOtherSlice";
 import { formatResources } from "@/utils/helpers";
 
-const ActioPointsCalculator = () => {
+const ActioPointsCalculator: NextPage = () => {
   const [sticky, setSticky] = useState<boolean>(false);
   const { speedOther, amount } = useSelector((state: any) => state.speedOther);
   const { offset } = useSelector((state: any) => state.global);

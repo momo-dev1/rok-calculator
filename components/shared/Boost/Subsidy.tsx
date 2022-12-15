@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { setTroopsSubSidy } from "@/store/tropsSlice";
+import { setTroopsSubSidy } from "@/store/tropsHealingSlice";
 
 type Props = {
   value: number;
@@ -20,15 +20,16 @@ const Subsidy = ({ value }: Props) => {
   return (
     <form>
       <div className="md:text-lg flex items-start justify-center gap-2 text-sm font-semibold text-white">
-        <label htmlFor="">Subsidy:</label>
+        <label htmlFor="Healing RSS Reduction">Healing RSS Reduction:</label>
         <input
           maxLength={2}
           className={`w-[80px] md:max-w-[100px] bg-transparent ${
             value > 0 ? "text-green-400" : "text-white"
           } text-center shadow-neumorphic rounded-md outline-none`}
-          name="Subsidy"
+          name="Healing RSS Reduction"
           value={value}
           type="number"
+          id="Healing RSS Reduction"
           onChange={handleInputChange}
           onFocus={(e) => e.target.select()}
         />

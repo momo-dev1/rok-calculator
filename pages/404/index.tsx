@@ -1,7 +1,8 @@
 import Link from "next/link";
+import type { NextPage } from "next";
 import { Layout } from "@/components/index";
 
-const NotFound = () => {
+const NotFound: NextPage = () => {
   return (
     <Layout title="404 page">
       <div className="max-w-3xl mx-auto overflow-hidden">

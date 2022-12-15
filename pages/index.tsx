@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
-import { Footer } from "@/components/index";
 import type { NextPage } from "next";
+import { Footer } from "@/components/index";
 import Head from "next/head";
 import Link from "next/link";
 import { HomeList } from "@/utils/HomeData";
@@ -45,11 +45,11 @@ const Home: NextPage = () => {
         <meta
           key="description"
           name="description"
-          content="rok-calc helps to calculate resource packs,building, speedups, healing, and tomes of knowledge."
+          content="rok-calc helps you calculate resource packs, troops, alliance technology, buildings, speedups, healing, and tomes of knowledge."
         />
         <meta
           name="keywords"
-          content="rise of kingdoms calculator, rok calculator, rok training, rok troops training, rok healing, rok calculate healing, rok calculate resources, rok calculate speedup, rok speedups, rok resources, rise of kindgdom healing calculator, rise of kingdom calculate resources, rise of kingdom calculate speedup"
+          content="rise of kingdoms calculator, rok calculator, rok training, rok troops training, alliance technology, rok healing, rok calculate healing, rok calculate resources, rok calculate speedup, rok speedups, rok resources, rise of kindgdom healing calculator, rise of kingdom calculate resources, rise of kingdom calculate speedup"
         />
         <meta property="og:url" content="https://rok-calc.com" />
         <meta property="og:title" content="Home" />
@@ -67,7 +67,7 @@ const Home: NextPage = () => {
       </Head>
 
       <section className="min-h-[calc(100vh-90px)] bg-[#222222] pt-8 text-white">
-        <div className="bg-[#292929] p-10 max-w-5xl	lg:mx-auto rounded-md mb-14 mx-4 text-center">
+        <div className="bg-[#292929] p-10 max-w-5xl	lg:mx-auto rounded-md mb-14 mx-4 lg:text-center">
           <h1 className="md:text-5xl text-3xl">
             Rise of Kingdoms Calculator (RoK)
           </h1>
@@ -78,7 +78,7 @@ const Home: NextPage = () => {
           </p>
         </div>
 
-        <main className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 max-w-5xl mx-auto pb-8 px-4">
+        <main className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-10 max-w-5xl mx-auto pb-8 px-4">
           {HomeList.map((item: any) => (
             <Link key={item.name} href={item.url}>
               <a>
@@ -87,10 +87,17 @@ const Home: NextPage = () => {
                     {item.text}
                   </p>
                   <figure
-                    className="text-center cursor-pointer 
-                    h-full w-full bg-blue-300 rounded-md backdrop-filter backdrop-blur-lg bg-opacity-10 border border-gray-400 p-8"
+                    className="flex items-center gap-5 cursor-pointer 
+                    h-full w-full bg-darkCharcoal rounded-md backdrop-filter backdrop-blur-lg bg-opacity-50 border border-gray-400 p-8"
                   >
-                    <h2 className="text-3xl">{item.name}</h2>
+                    <img
+                      width={64}
+                      height={64}
+                      className="h-16 object-contain"
+                      src={item.src.src}
+                      alt={item.name}
+                    />
+                    <h2 className="flex-1 text-3xl">{item.name}</h2>
                   </figure>
                 </div>
               </a>

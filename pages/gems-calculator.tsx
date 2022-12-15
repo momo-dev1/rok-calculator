@@ -1,10 +1,11 @@
+import type { NextPage } from "next";
 import { useCallback, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { ClearBtn, Layout, SpeedOtherCard, HowToUse } from "@/components/index";
 import { sumCount, clearValues } from "@/store/speedOtherSlice";
 import { formatResources } from "@/utils/helpers";
 
-const GemsPackCalculator = () => {
+const GemsPackCalculator: NextPage = () => {
   const [sticky, setSticky] = useState<boolean>(false);
   const { speedOther, amount } = useSelector((state: any) => state.speedOther);
   const { offset } = useSelector((state: any) => state.global);
@@ -70,7 +71,6 @@ const GemsPackCalculator = () => {
             {speedOther
               .filter((item: any) => item.category === "gem")
               .map((speedItem: any, index: number) => {
-                console.log(speedItem.name);
                 return (
                   <SpeedOtherCard
                     key={index}

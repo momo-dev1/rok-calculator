@@ -1,3 +1,4 @@
+import type { NextPage } from "next";
 import { useCallback, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { TimeIcon } from "../public/assets";
@@ -5,7 +6,7 @@ import { ClearBtn, Layout, SpeedCard, HowToUse } from "@/components/index";
 import { sumTime, clearValues } from "@/store/speedSlice";
 import { formatTime } from "@/utils/helpers";
 
-const Speed = () => {
+const Speed: NextPage = () => {
   const [sticky, setSticky] = useState<boolean>(false);
   const { speed, time } = useSelector((state: any) => state.speed);
   const { offset } = useSelector((state: any) => state.global);

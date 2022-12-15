@@ -5,6 +5,8 @@ import {
   RockIcon,
   TimeIcon,
   TimberIcon,
+  ArrowIcon,
+  BluePrintIcon,
 } from "../../public/assets";
 import { formatTime, formatResources } from "@/utils/helpers";
 
@@ -13,9 +15,11 @@ export type Props = {
   rock: number;
   timber: number;
   time: number;
-  power: number;
+  power?: number;
   bgColor: string;
   gold?: number;
+  arrow?: number;
+  blueprint?: number;
   mgePoints?: number;
   subsidy?: number;
   speedBoost: number;
@@ -30,6 +34,8 @@ const Resources = ({
   gold,
   mgePoints,
   power,
+  arrow,
+  blueprint,
   subsidy,
   speedBoost,
   bgColor,
@@ -87,6 +93,24 @@ const Resources = ({
         {formatResources(rock)}
       </div>
 
+      {arrow && arrow > 0 ? (
+        <div
+          className={`flex flex-col items-center justify-center gap-1 ${
+            subsidy || 0 > 0 ? "text-green-400" : ""
+          }`}
+        >
+          <ArrowIcon />
+          {formatResources(arrow)}
+        </div>
+      ) : null}
+
+      {blueprint && blueprint > 0 ? (
+        <div className="flex flex-col items-center justify-center gap-1">
+          <BluePrintIcon />
+          {formatResources(blueprint)}
+        </div>
+      ) : null}
+
       {gold || gold === 0 ? (
         <div
           className={`flex flex-col items-center justify-center gap-1 ${
@@ -108,11 +132,7 @@ const Resources = ({
       </div>
 
       {mgePoints || mgePoints === 0 ? (
-        <div
-          className={`flex flex-col items-center justify-center -mt-1 ${
-            subsidy || 0 > 0 ? "text-green-400" : ""
-          }`}
-        >
+        <div className="flex flex-col items-center justify-center gap-1">
           <div className="text-center">
             <p className="font-audiowide font-thin ">MGE</p>
             <p className="font-audiowide font-thin ">Points</p>
@@ -122,10 +142,12 @@ const Resources = ({
         </div>
       ) : null}
 
-      <div className="flex flex-col items-center justify-center ">
-        <p className="py-2 font-audiowide font-thin ">Power</p>
-        {formatResources(power)}
-      </div>
+      {power || power === 0 ? (
+        <div className="flex flex-col items-center justify-center ">
+          <p className="py-2 font-audiowide font-thin ">Power</p>
+          {formatResources(power)}
+        </div>
+      ) : null}
     </div>
   );
 };

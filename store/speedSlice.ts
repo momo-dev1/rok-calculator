@@ -17,7 +17,6 @@ const speedSlice = createSlice({
         setTime: (state, { payload: { name, value } }) => {
             let idx = state.speed.findIndex(item => item.times.find(i => i.name === name))
             let itemIdx = state.speed[idx].times.findIndex(i => i.name === name)
-            console.log(itemIdx);
             state.speed[idx].times[itemIdx].value = +value
         },
 

@@ -51,23 +51,26 @@ const SpeedOtherCard = ({ name, color, src, value }: Props) => {
     <div className="my-5 text-center">
       <figure className="relative flex flex-col items-center">
         <div className="px-2">
-          <p
+          <label
+            htmlFor={name}
             className=" text-md text-shadow text-white font-semibold 
              w-fit mx-auto px-1 mb-0.5"
           >
             {itemName}
-          </p>
+          </label>
           <div
             className={`flex items-center justify-center w-14 h-14 ${frame} bg-contain `}
           >
             <img className="w-10 h-10 " src={src.src} alt={`${name} img`} />
           </div>
         </div>
+
         <input
           className={`text-center ${
             value > 0 ? "text-yellow-400" : "text-white"
           } outline-none bg-gray-800 py-1 border border-yellow-500 w-14 font-semibold `}
           type="number"
+          id={name}
           name={name}
           maxLength={6}
           value={value.toString()}

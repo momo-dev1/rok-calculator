@@ -30,7 +30,7 @@ const Footer = () => {
               </div>
             </a>
           </Link>
-          <Link href="https://www.buymeacoffee.com/rok-calc">
+          <Link href="https://www.buymeacoffee.com/rokcalc1">
             <a className="block w-32 mb-1" target="_blank" rel="noreferrer">
               <img
                 className="w-full h-full"
