@@ -58,7 +58,7 @@ const TroopsHealing: NextPage = () => {
         <div className="text-md md:text-lg space-y-2 text-gray-100">
           <p>Enter the number of troops to be healed.</p>
           <p>
-            Adjust the Training Speed Buff{" "}
+            Adjust the Healing Speed Buff{" "}
             <span className="text-sm">(Optional)</span>
           </p>
           <p>
