@@ -5,7 +5,7 @@ const ContactUs: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Contact Us</title>
+        <title>Contact Us | Rise of Kingdoms</title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <link
@@ -35,7 +35,7 @@ const ContactUs: NextPage = () => {
         <meta name="application-name" content="rok-calc" />
         <meta name="msapplication-TileColor" content="#ffc40d" />
         <meta name="theme-color" content="#ffffff" />
-        <link rel="canonical" href="https://rok-calc.com/contact-us/" />
+        <link rel="canonical" href="https://www.rok-calc.com/contact-us" />
         <meta name="robots" content="all" />
         <meta
           key="description"
@@ -43,7 +43,7 @@ const ContactUs: NextPage = () => {
           content="Rise of Kingdoms | Contact Us"
         />
         <meta name="keywords" content="contact us" />
-        <meta property="og:url" content="https://rok-calc.com" />
+        <meta property="og:url" content="https://www.rok-calc.com" />
         <meta property="og:title" content="Contact Us" />
         <meta property="og:type" content="website" />
         <meta property="og:locale" content="en_US" />
@@ -54,7 +54,10 @@ const ContactUs: NextPage = () => {
           property="og:description"
           content="Contact Us | Rise of Kingdoms"
         />
-        <meta property="og:image" content="/public/assets/rok-og.webp" />
+        <meta
+          property="og:image"
+          content="https://www.rok-calc.com/assets/rok-og.webp"
+        />
       </Head>
 
       <section className="flex items-center justify-center">

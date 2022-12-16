@@ -16,6 +16,7 @@ const NavBar = () => {
 
   const dropDown = [
     { name: "Tome of Knowledge", path: "/exp-calculator" },
+    { name: "Commander Exp", path: "/commander-calculator" },
     { name: "Resource Packs", path: "/resource-calculator" },
     { name: "Action Points", path: "/action-points-calculator" },
     { name: "Gems", path: "/gems-calculator/" },

@@ -1,5 +1,5 @@
-import Sculpture from "../public/assets/other/Legendary_Sculpture.webp"
 import ResourceChest from "../public/assets/other/Resource_Chest.webp"
+import Commander from "../public/assets/other/Saladin.png"
 import Troop from "../public/assets/trops/tier5/Elite_Janissary.webp"
 import Building from "../public/assets/buildings/others/Building_City_Hall_1_5.webp"
 import { Gems, ActionPoint, TomeExp, universal_speedup_icon } from "../public/assets/speed/index"
@@ -48,9 +48,9 @@ export const HomeList = [
         url: "/action-points-calculator"
     },
     {
-        name: "Sculptures Calculator",
-        text: "Calculate sculptures you need to upgrade your commanders.",
-        src: Sculpture,
+        name: "Commander (Exp) Calculator",
+        text: "Calculate the exp you need to upgrade your commanders level.",
+        src: Commander,
         url: "/commander-calculator"
     },
     {

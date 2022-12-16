@@ -4,6 +4,7 @@ import tropsHealingSlice from "./tropsHealingSlice"
 import speedSlice from "./speedSlice"
 import buildingsSlice from "./buildingsSlice"
 import speedOtherSlice from "./speedOtherSlice"
+import commanderSlice from "./commanderSlice"
 import globalSlice from "./globalSlice"
 
 const store = configureStore({
@@ -12,6 +13,7 @@ const store = configureStore({
         trops: tropsSlice,
         tropsHealing: tropsHealingSlice,
         speed: speedSlice,
+        commander: commanderSlice,
         speedOther: speedOtherSlice,
         buildings: buildingsSlice,
     }

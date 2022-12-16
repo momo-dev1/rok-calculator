@@ -19,7 +19,6 @@ const speedSlice = createSlice({
             let itemIdx = state.speed[idx].times.findIndex(i => i.name === name)
             state.speed[idx].times[itemIdx].value = +value
         },
-
         sumTime: (state) => {
             let totalTimeCount = state.speed.map(item => item.times.reduce((acc, curr) => {
                 let { time, value } = curr

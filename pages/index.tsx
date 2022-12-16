@@ -39,7 +39,7 @@ const Home: NextPage = () => {
         <meta name="application-name" content="rok-calc" />
         <meta name="msapplication-TileColor" content="#ffc40d" />
         <meta name="theme-color" content="#ffffff" />
-        <link rel="canonical" href="https://rok-calc.com/" />
+        <link rel="canonical" href="https://www.rok-calc.com" />
         <meta name="msapplication-TileColor" content="#000000" />
         <meta name="robots" content="all" />
         <meta
@@ -51,7 +51,7 @@ const Home: NextPage = () => {
           name="keywords"
           content="rise of kingdoms calculator, rok calculator, rok training, rok troops training, alliance technology, rok healing, rok calculate healing, rok calculate resources, rok calculate speedup, rok speedups, rok resources, rise of kindgdom healing calculator, rise of kingdom calculate resources, rise of kingdom calculate speedup"
         />
-        <meta property="og:url" content="https://rok-calc.com" />
+        <meta property="og:url" content="https://www.rok-calc.com" />
         <meta property="og:title" content="Home" />
         <meta property="og:type" content="website" />
         <meta property="og:locale" content="en_US" />
@@ -62,7 +62,10 @@ const Home: NextPage = () => {
           property="og:description"
           content="rok-calc helps to calculate resource packs, building, speedups, healing, and tomes of knowledge."
         />
-        <meta property="og:image" content="/public/assets/rok-og.webp" />
+        <meta
+          property="og:image"
+          content="https://www.rok-calc.com/assets/rok-og.webp"
+        />
         <meta name="author" content="MomoLk" />
       </Head>
 

@@ -31,8 +31,7 @@ const BuildingsPage: NextPage = () => {
   } = useSelector((state: any) => state.buildings);
   const { offset } = useSelector((state: any) => state.global);
   const dispatch = useDispatch();
-  const categoriesNames = ["Economic", "Others"];
-  // "Military", "Others"
+  const categoriesNames = ["Economic", "Military", "Others"];
 
   useEffect(() => {
     dispatch(totalResources());

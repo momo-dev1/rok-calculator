@@ -490,7 +490,7 @@ const initialState: TroopsInitialState = {
 };
 
 const tropsSlice = createSlice({
-    name: 'trops',
+    name: 'healing',
     initialState,
     reducers: {
         clearValues: (state) => {
