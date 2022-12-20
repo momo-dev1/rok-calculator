@@ -13,13 +13,19 @@ import CourierStation from './economic/Building_Courier_Station.webp'
 
 import Tavern from './military/Building_Tavern_1_5.webp'
 import ScoutCamp from './military/Building_Scout_Camp_6_4.webp'
+import Barracks from './military/Building_Barracks_1_5.webp'
+import BlackSmith from './military/Building_Blacksmith_1_5.webp'
+import Bulletin from './military/Building_Bulletin_Board_1_4.webp'
+import Monument from './military/Building_Monument_6_4.webp'
 
 import CityHall from './others/Building_City_Hall_1_5.webp'
 import Wall from './others/Building_Wall_6_4.webp'
 import WatchTower from './others/Building_Watchtower_6_4.webp'
 
+
 export {
     Farm, LumberMill, Quarry, GoldMine, Academy, StoreHouse, AllianceCenter, BuilderHut, Shop,
-    TradingPost, LyceumOfWisdom, CourierStation, CityHall, Wall, WatchTower, Tavern, ScoutCamp
+    TradingPost, LyceumOfWisdom, CourierStation, CityHall, Wall, WatchTower, Tavern, ScoutCamp, Barracks,
+    BlackSmith, Bulletin, Monument,
 
 }
