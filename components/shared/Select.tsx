@@ -32,9 +32,6 @@ const Select = ({
     if (buildings) {
       dispatch(setBuildingsLevel({ name, value, label }));
       dispatch(sumBuildingsResources({ name, label }));
-    } else {
-      // dispatch(setResearchLevel({ name, value, label }));
-      // dispatch(sumResearchResources({ name, label }));
     }
   };
 
