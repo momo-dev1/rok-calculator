@@ -115,7 +115,7 @@ const CommanderPage: NextPage = () => {
             <ClearBtn onClick={handleClearValues} />
           </div>
 
-          <form className="my-2 md:w-1/2 space-y-2">
+          <form className="my-2 w-full md:w-1/2 space-y-2">
             <div>
               <label
                 htmlFor="commander"
@@ -173,7 +173,7 @@ const CommanderPage: NextPage = () => {
                 value={from}
                 onChange={handleInputChange}
                 onFocus={(e) => e.target.select()}
-                className="bg-transparent py-1 text-gray-300 px-4 focus:outline-none flex-1"
+                className="bg-transparent py-1 text-gray-300 px-4 focus:outline-none flex-1 w-full"
               />
               <label className="py-2 px-4 bg-ironGrey text-gray-300">
                 Level
@@ -196,7 +196,7 @@ const CommanderPage: NextPage = () => {
                 value={goal}
                 onChange={handleInputChange}
                 onFocus={(e) => e.target.select()}
-                className="bg-transparent py-1 text-gray-300 px-4 focus:outline-none flex-1"
+                className="bg-transparent py-1 text-gray-300 px-4 focus:outline-none flex-1 w-full"
               />
               <label className="py-2 px-4 bg-ironGrey text-gray-300">
                 Level
