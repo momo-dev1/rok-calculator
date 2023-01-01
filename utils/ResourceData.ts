@@ -2,6 +2,7 @@ import Food from "../public/assets/resources/food.webp";
 import Gold from "../public/assets/resources/gold.webp";
 import Rock from "../public/assets/resources/rock.webp";
 import Timber from "../public/assets/resources/timber.webp";
+import ResourcePack from "../public/assets/other/Item_Resource_Pack.webp";
 
 export const ResourcesData = [
     { name: "food-1k", category: "food", color: "", src: Food, amount: 1000, value: 0 },
@@ -36,4 +37,68 @@ export const ResourcesData = [
     { name: "gold-1,5m", category: "gold", color: "purple", src: Gold, amount: 1500000, value: 0 },
     { name: "gold-5m", category: "gold", color: "purple", src: Gold, amount: 5000000, value: 0 },
 
+]
+
+
+export const ResourcesPackData = [
+    {
+        name: "Lv.1 Resource Pack A",
+        color: "",
+        src: ResourcePack,
+        amount: {
+            food: 1000,
+            wood: 1000,
+            stone: 0,
+            gold: 0,
+        },
+        value: 0
+    },
+    {
+        name: "Lv.1 Resource Pack B",
+        color: "",
+        src: ResourcePack,
+        amount: {
+            food: 1000,
+            wood: 1000,
+            stone: 750,
+            gold: 0,
+        },
+        value: 0
+    },
+    {
+        name: "Lv.1 Resource Pack C",
+        color: "",
+        src: ResourcePack,
+        amount: {
+            food: 1000,
+            wood: 1000,
+            stone: 750,
+            gold: 500,
+        },
+        value: 0
+    },
+    {
+        name: "Lv.2 Resource Pack",
+        color: "blue",
+        src: ResourcePack,
+        amount: {
+            food: 10000,
+            wood: 10000,
+            stone: 7500,
+            gold: 5000,
+        },
+        value: 0
+    },
+    {
+        name: "Lv.3 Resource Pack",
+        color: "blue",
+        src: ResourcePack,
+        amount: {
+            food: 100000,
+            wood: 100000,
+            stone: 100000,
+            gold: 100000,
+        },
+        value: 0
+    },
 ]

@@ -33,7 +33,7 @@ const ResourcePackCalculator: NextPage = () => {
 
   return (
     <>
-      <HowToUse title="Resource Packs Calculator">
+      <HowToUse title="Resource Packs ( rss ) Calculator">
         <div className="text-md md:text-lg space-y-2 text-gray-100">
           <p>
             Enter the amount of each resource, and the total should be
@@ -57,8 +57,8 @@ const ResourcePackCalculator: NextPage = () => {
 
       <Layout
         title="Resource Packs Calculator | Rise of Kingdoms (RoK)"
-        description="Rise of Kingdoms (RoK) - Resource Packs calculator. Calculate how many resources contained in each pack."
-        keywords="rise of kingdoms calculator, rok calculator, rok training, rok troops training, rok healing, rok calculate healing, rok calculate resources, rok calculate speedup, rok speedups, rok resources, rise of kindgdom healing calculator, rise of kingdom calculate resources, rise of kingdom calculate speedup "
+        description="Rise of Kingdoms (RoK) - Resource Packs ( rss ) calculator. Calculate how many resources contained in each pack."
+        keywords="rise of kingdoms calculator,rss calculator, rok calculator, rok training, rok troops training, rok healing, rok calculate healing, rok calculate resources, rok calculate speedup, rok speedups, rok resources, rise of kindgdom healing calculator, rise of kingdom calculate resources, rise of kingdom calculate speedup "
         canonical="resource-calculator"
       >
         <>
