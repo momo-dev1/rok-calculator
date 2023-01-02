@@ -33,7 +33,7 @@ const ActioPointsCalculator: NextPage = () => {
       <HowToUse title="Action Points Recovery Calculator">
         <div className="text-md md:text-lg space-y-2 text-gray-100">
           <p>
-            Enter the amount of tome of knowledge (Exp), and the total should be
+            Enter the amount of Action Points, and the total should be
             calculated automatically
           </p>
           <div className="space-y-2">

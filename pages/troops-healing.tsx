@@ -72,7 +72,7 @@ const TroopsHealing: NextPage = () => {
         title="Troops Healing Calculator | Rise of Kingdoms (RoK)"
         description="Rise of Kingdoms (RoK) - Troops Healing Calculator Figure out the number of minutes and resources needed to heal the troops."
         keywords="rise of kingdoms calculator, rok calculator, rok training, rok troops training, rok healing, rok calculate healing, rok calculate resources, rok calculate speedup, rok speedups, rok resources, rise of kindgdom healing calculator, rise of kingdom calculate resources, rise of kingdom calculate speedup"
-        canonical="mge-training"
+        canonical="troops-healing"
       >
         <>
           <div className="flex flex-wrap items-center justify-center gap-6 mb-2">
