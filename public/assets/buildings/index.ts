@@ -17,6 +17,8 @@ import Barracks from './military/Building_Barracks_1_5.webp'
 import BlackSmith from './military/Building_Blacksmith_1_5.webp'
 import Bulletin from './military/Building_Bulletin_Board_1_4.webp'
 import Monument from './military/Building_Monument_6_4.webp'
+import ArcheryRange from './military/Building_Archery_Range_1_5.webp'
+import Stable from './military/Building_Stable_1_5.webp'
 
 import CityHall from './others/Building_City_Hall_1_5.webp'
 import Wall from './others/Building_Wall_6_4.webp'
@@ -26,6 +28,6 @@ import WatchTower from './others/Building_Watchtower_6_4.webp'
 export {
     Farm, LumberMill, Quarry, GoldMine, Academy, StoreHouse, AllianceCenter, BuilderHut, Shop,
     TradingPost, LyceumOfWisdom, CourierStation, CityHall, Wall, WatchTower, Tavern, ScoutCamp, Barracks,
-    BlackSmith, Bulletin, Monument,
+    BlackSmith, Bulletin, Monument,ArcheryRange,Stable
 
 }
