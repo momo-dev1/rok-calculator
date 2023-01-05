@@ -7,7 +7,7 @@ import {
   tropsTier4,
   tropsTier5,
 } from "@/utils/tropsData";
-import { clearValues, setQty, sumResources } from "@/store/tropsSlice";
+import { clearValues, setQty, sumResources } from "@/store/tropsHealingSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 import {
@@ -78,7 +78,7 @@ const TroopsHealing: NextPage = () => {
           <div className="flex flex-wrap items-center justify-center gap-6 mb-2">
             <Subsidy value={subsidy} />
             <SpeedBoost
-              name="troops"
+              name="troops healing"
               title="Healing Speed Buff"
               value={speedBoost}
             />

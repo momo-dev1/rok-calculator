@@ -489,35 +489,36 @@ const initialState: TroopsInitialState = {
     ]
 };
 
-const tropsSlice = createSlice({
+const tropsHealingSlice = createSlice({
     name: 'healing',
     initialState,
     reducers: {
-        clearValues: (state) => {
-            return initialState
-        },
-        setTroopsSpeedBoost: (state, { payload: { value } }) => {
+        clearValues: () => initialState,
+        setTroopsHealingBoost: (state, { payload: { value } }) => {
             state.speedBoost = +value
         },
         setTroopsSubSidy: (state, { payload: { value } }) => {
             state.subsidy = +value
         },
         setQty: (state, { payload: { name, value } }) => {
-            if (state.tier1.find(item => item.name.includes(name))) {
-                let idx = state.tier1.findIndex(item => item.name.includes(name))
-                state.tier1[idx].qty = +(value.replace(/,/g, ""))
-            } else if (state.tier2.find(item => item.name.includes(name))) {
-                let idx = state.tier2.findIndex(item => item.name.includes(name))
-                state.tier2[idx].qty = +(value.replace(/,/g, ""))
-            } else if (state.tier3.find(item => item.name.includes(name))) {
-                let idx = state.tier3.findIndex(item => item.name.includes(name))
-                state.tier3[idx].qty = +(value.replace(/,/g, ""))
-            } else if (state.tier4.find(item => item.name.includes(name))) {
-                let idx = state.tier4.findIndex(item => item.name.includes(name))
-                state.tier4[idx].qty = +(value.replace(/,/g, ""))
-            } else if (state.tier5.find(item => item.name.includes(name))) {
-                let idx = state.tier5.findIndex(item => item.name.includes(name))
-                state.tier5[idx].qty = +(value.replace(/,/g, ""))
+            const { tier1, tier2, tier3, tier4, tier5 } = state;
+
+            let targetTier;
+            if (tier1.find((item) => item.name.includes(name))) {
+                targetTier = tier1;
+            } else if (tier2.find((item) => item.name.includes(name))) {
+                targetTier = tier2;
+            } else if (tier3.find((item) => item.name.includes(name))) {
+                targetTier = tier3;
+            } else if (tier4.find((item) => item.name.includes(name))) {
+                targetTier = tier4;
+            } else if (tier5.find((item) => item.name.includes(name))) {
+                targetTier = tier5;
+            }
+
+            if (targetTier) {
+                const idx = targetTier.findIndex((item) => item.name.includes(name));
+                targetTier[idx].qty = +value.replace(/,/g, "");
             }
         },
         sumResources: (state) => {
@@ -590,6 +591,6 @@ const tropsSlice = createSlice({
 });
 
 
-export const { setQty, sumResources, setTroopsSpeedBoost, clearValues, setTroopsSubSidy } = tropsSlice.actions;
+export const { setQty, sumResources, setTroopsHealingBoost, clearValues, setTroopsSubSidy } = tropsHealingSlice.actions;
 
-export default tropsSlice.reducer;
+export default tropsHealingSlice.reducer;
