@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux";
 import { setTroopsSpeedBoost } from "@/store/tropsSlice";
+import { setTroopsHealingBoost } from "@/store/tropsHealingSlice";
 import { setbuildingsSpeedBoost } from "@/store/buildingsSlice";
 
 type Props = {
@@ -21,6 +22,8 @@ const SpeedBoost = ({ name, title, value }: Props) => {
       dispatch(setTroopsSpeedBoost({ value }));
     } else if (name === "buildings") {
       dispatch(setbuildingsSpeedBoost({ value }));
+    } else if (name === "troops healing") {
+      dispatch(setTroopsHealingBoost({ value }));
     }
   };
   return (
