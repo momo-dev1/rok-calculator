@@ -27,7 +27,7 @@ const Select = ({
 }: SelectProps) => {
   const dispatch = useDispatch();
 
-  const updateLevel = (e: any) => {
+  const updateLevel = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const { name, value } = e.target;
     if (buildings) {
       dispatch(setBuildingsLevel({ name, value, label }));

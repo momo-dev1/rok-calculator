@@ -1,6 +1,8 @@
+import { ReactNode } from "react";
+
 type IProps = {
   title: string;
-  children: JSX.Element;
+  children: ReactNode;
 };
 
 const HowToUse = ({ title, children }: IProps) => {

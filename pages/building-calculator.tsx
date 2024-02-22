@@ -37,17 +37,10 @@ const BuildingsPage: NextPage = () => {
     dispatch(totalResources());
   }, [buildings, speedBoost, dispatch]);
 
-  const handleInputChange = (e: {
-    target: { name: any; value: any; maxLength: any };
-  }) => {
-    let { name, value, maxLength } = e.target;
-    if (value.length >= maxLength) {
-      value = value.substring(0, maxLength);
-    }
-    if (!value || value < 0) {
-      value = 1;
-    }
-    dispatch(setQty({ name, value }));
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    const numericValue = Math.max(Number(value), 0);
+    dispatch(setQty({ name, value: numericValue }));
   };
 
   return (

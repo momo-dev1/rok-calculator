@@ -2,11 +2,8 @@
 import Select from "../shared/Select";
 type Props = {
   item: any;
-  handleInputChange: (e: {
-    target: { name: any; value: any; maxLength: any };
-  }) => void;
+  handleInputChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
-
 const Building = ({ item, handleInputChange }: Props) => {
   return (
     <div className="text-center">

@@ -1,12 +1,12 @@
 import Head from "next/head";
 import { ScrollToTop, Footer } from "@/components/index";
-import { useEffect, useRef } from "react";
+import { ReactNode, useEffect, useRef } from "react";
 import { useDispatch } from "react-redux";
 import { setOffset } from "@/store/globalSlice";
 
 type IProps = {
   title: string;
-  children: JSX.Element;
+  children: ReactNode;
   description?: string;
   keywords?: string;
   canonical?: string;
