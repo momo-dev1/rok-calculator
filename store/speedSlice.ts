@@ -1,33 +1,38 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { SpeedInitialState } from '../types/dataTypes';
 import { SpeedData } from '@/utils/SpeedData';
 
 const initialState: SpeedInitialState = {
-    time: 0,
-    speed: SpeedData,
+  time: 0,
+  speed: SpeedData,
 };
 
 const speedSlice = createSlice({
-    name: 'speed',
-    initialState,
-    reducers: {
-        clearValues: () => initialState,
-        setTime: (state, { payload: { name, value } }) => {
-            const { speed } = state;
-            const speedItem = speed.find(item => item.times.find(i => i.name === name));
-            const timeItem = speedItem?.times.find(i => i.name === name);
-            if (timeItem) {
-                timeItem.value = +value;
-            }
-        },
-        sumTime: (state) => {
-            const totalTimeCount = state.speed.map(item => item.times.reduce((acc, { time, value }) => {
-                acc += time * value;
-                return acc;
-            }, 0)).reduce((acc, curr) => acc + curr, 0);
-            state.time = totalTimeCount;
-        },
+  name: 'speed',
+  initialState,
+  reducers: {
+    // Resets the state to its initial values
+    clearValues: () => initialState,
+
+    // Sets the value of a specific time item within a speed object
+    setTime: (state, action: PayloadAction<{ name: string; value: number }>) => {
+      const { name, value } = action.payload;
+      state.speed.forEach((speedItem) => {
+        const timeItem = speedItem.times.find((i) => i.name === name);
+        if (timeItem) {
+          timeItem.value = value;
+        }
+      });
     },
+
+    // Calculates and updates the total time based on the speed data
+    sumTime: (state) => {
+      state.time = state.speed.reduce((totalTime, speedItem) => {
+        const itemTotal = speedItem.times.reduce((itemSum, { time, value }) => itemSum + time * value, 0);
+        return totalTime + itemTotal;
+      }, 0);
+    },
+  },
 });
 
 export const { setTime, sumTime, clearValues } = speedSlice.actions;

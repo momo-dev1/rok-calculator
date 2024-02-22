@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { commanderData } from "@/utils/commanderData";
 
 const initialState = {
@@ -8,55 +8,37 @@ const initialState = {
     currentExp: 0,
     commanderRarity: "Legendary",
     commander: commanderData,
-}
+};
 
 const commandersSlice = createSlice({
     name: 'commander',
     initialState,
     reducers: {
-        clearValues: (state) => {
-            return initialState
+        clearValues: () => ({ ...initialState }),
+        setSelect: (state, { payload: { value } }: PayloadAction<{ value: string }>) => {
+            state.commanderRarity = value;
+            state.exp = 0;
+            state.from = 0;
+            state.goal = 0;
+            state.currentExp = 0;
         },
-        setSelect: (state, { payload: { value } }) => {
-            state.commanderRarity = value
-            state.exp = 0
-            state.goal = 0
-            state.from = 0
-            state.currentExp = 0
+        setCurrentExp: (state, { payload: { value } }: PayloadAction<{ value: number }>) => {
+            state.currentExp = value;
         },
-        setCurrentExp: (state, { payload: { value } }) => {
-            state.currentExp = value
-        },
-        setLevel: (state, { payload: { name, value } }) => {
-            if (state.commander.find(item => item.name.includes(state.commanderRarity))) {
-
-                if (name === "from") {
-                    state.from = +value
-                }
-                if (name === "goal") {
-
-                    state.goal = +value
-                }
-            }
+        setLevel: (state, { payload: { name, value } }: PayloadAction<{ name: 'from' | 'goal'; value: number }>) => {
+            state[name] = value;
         },
         totalExp: (state) => {
-            const idx = state.commander.findIndex(item => item.name.includes(state.commanderRarity))
-            let startLevel = state.from
-            let endLevel = state.goal
+            const idx = state.commander.findIndex(item => item.name.includes(state.commanderRarity));
+            if (idx === -1 || state.from >= state.goal || state.from >= 60) {
+                return;
+            }
 
-            if (endLevel !== 0 && startLevel >= endLevel) {
-                return initialState
-            }
-            if (startLevel >= 60) return
-            if (endLevel > 0 && endLevel <= 60) {
-                let exp = state.commander[idx].exp.slice(startLevel, endLevel).reduce((acc: any, curr: any) => acc + curr)
-                state.exp = exp
-            }
+            const expArray = state.commander[idx].exp.slice(state.from, state.goal);
+            state.exp = expArray.reduce((acc, curr) => acc + curr, 0);
         },
-
-    }
-})
-
+    },
+});
 
 export const { totalExp, setLevel, setSelect, setCurrentExp, clearValues } = commandersSlice.actions;
 

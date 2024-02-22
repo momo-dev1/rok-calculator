@@ -1,6 +1,6 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { buildingsInitialState, } from "../types/dataTypes";
-import { BuildingsData } from "@/utils/BuildingsData";
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { buildingsInitialState } from '../types/dataTypes';
+import { BuildingsData } from '@/utils/BuildingsData';
 
 const initialState: buildingsInitialState = {
     food: 0,
@@ -12,112 +12,85 @@ const initialState: buildingsInitialState = {
     blueprint: 0,
     arrow: 0,
     buildings: BuildingsData,
-}
+};
+
+const findBuildingIndexByName = (state: buildingsInitialState, name: string) =>
+    state.buildings.findIndex((item) => item.name.includes(name));
 
 const buildingsSlice = createSlice({
     name: 'buildings',
     initialState,
     reducers: {
-        clearValues: (state) => {
-            return initialState
+        clearValues: () => initialState,
+        setbuildingsSpeedBoost: (state, { payload: { value } }: PayloadAction<{ value: number }>) => {
+            state.speedBoost = value;
         },
-        setbuildingsSpeedBoost: (state, { payload: { value } }) => {
-            state.speedBoost = +value
-        },
-        setQty: (state, { payload: { name, value } }) => {
-            if (state.buildings.find(item => item.name.includes(name))) {
-                let idx = state.buildings.findIndex(item => item.name.includes(name))
-                state.buildings[idx].qty = +value
+        setQty: (state, { payload: { name, value } }: PayloadAction<{ name: string; value: number }>) => {
+            const idx = findBuildingIndexByName(state, name);
+            if (idx !== -1) {
+                state.buildings[idx].qty = value;
             }
         },
-        setLevel: (state, { payload: { name, value, label } }) => {
-            if (state.buildings.find(item => item.name.includes(name))) {
-                let idx = state.buildings.findIndex(item => item.name.includes(name))
-                if (label === "from") {
-                    state.buildings[idx].start = +value
-                }
-                if (label === "to") {
-                    state.buildings[idx].end = +value
-                }
+        setLevel: (
+            state,
+            { payload: { name, value, label } }: PayloadAction<{ name: string; value: number; label: 'from' | 'to' }>
+        ) => {
+            const idx = findBuildingIndexByName(state, name);
+            if (idx !== -1) {
+                state.buildings[idx][label === 'from' ? 'start' : 'end'] = value;
             }
         },
-        sumResources: (state, { payload: { name, label } }) => {
-            function sumResource(buildingName: any[], idx: number) {
-                let start = buildingName[idx].start
-                let end = buildingName[idx].end
-                if (end !== 0 && start >= end) {
-                    return initialState
+        sumResources: (state, { payload: { name, label } }: PayloadAction<{ name: string; label: 'to' }>) => {
+            const idx = findBuildingIndexByName(state, name);
+            if (idx !== -1) {
+                const building = state.buildings[idx];
+                const { start, end } = building;
+
+                if (end !== 0 && start >= end) return initialState;
+                if (label === 'to' && end === 0) {
+                    Object.assign(building, {
+                        totalFood: 0,
+                        totalRock: 0,
+                        totalTimber: 0,
+                        totalItems: 0,
+                        totalPower: 0,
+                        totalBluePrint: 0,
+                        totalArrow: 0,
+                        totalTime: 0,
+                        start: 0,
+                        qty: 1,
+                    });
+                    return;
                 }
-                if (label === "to" && end === 0) {
-                    buildingName[idx].totalFood = 0
-                    buildingName[idx].totalRock = 0
-                    buildingName[idx].totalTimber = 0
-                    buildingName[idx].totalItems = 0
-                    buildingName[idx].totalPower = 0
-                    buildingName[idx].totalBluePrint = 0
-                    buildingName[idx].totalArrow = 0
-                    buildingName[idx].totalTime = 0
-                    buildingName[idx].start = 0
-                    buildingName[idx].qty = 1
-                    return
-                }
-                if (end !== 0) {
-                    let food = buildingName[idx].food.slice(start, end).reduce((acc: any, curr: any) => acc + curr)
-                    let rock = buildingName[idx].rock.slice(start, end).reduce((acc: any, curr: any) => acc + curr)
-                    let timber = buildingName[idx].timber.slice(start, end).reduce((acc: any, curr: any) => acc + curr)
-                    let power = buildingName[idx].power.slice(start, end).reduce((acc: any, curr: any) => curr)
-                    let blueprint = buildingName[idx].blueprint.slice(start, end).reduce((acc: any, curr: any) => acc + curr)
-                    let arrow = buildingName[idx].arrow.slice(start, end).reduce((acc: any, curr: any) => acc + curr)
-                    let time = buildingName[idx].time.slice(start, end).reduce((acc: any, curr: any) => acc + curr)
-                    buildingName[idx].totalFood = food
-                    buildingName[idx].totalRock = rock
-                    buildingName[idx].totalTimber = timber
-                    buildingName[idx].totalPower = power
-                    buildingName[idx].totalBluePrint = blueprint
-                    buildingName[idx].totalArrow = arrow
-                    buildingName[idx].totalTime = time
-                }
-            }
-            if (state.buildings.find(item => item.name.includes(name))) {
-                const idx = state.buildings.findIndex(item => item.name === name)
-                sumResource(state.buildings, idx)
+
+                ['food', 'rock', 'timber', 'power', 'blueprint', 'arrow', 'time'].forEach((resource) => {
+                    building[`total${resource.charAt(0).toUpperCase() + resource.slice(1)}`] =
+                        building[resource].slice(start, end).reduce((acc, curr) => acc + curr, 0);
+                });
             }
         },
         totalResources: (state) => {
-            const resourceTotal = (researchName: any[]) => {
-                return researchName.reduce((acc, curr) => {
-                    const { totalFood, totalRock, totalTimber, totalPower, totalBluePrint, totalTime, totalArrow, qty } = curr;
-                    acc.food += totalFood * qty
-                    acc.rock += totalRock * qty
-                    acc.timber += totalTimber * qty
-                    acc.power += totalPower * qty
-                    acc.blueprint += totalBluePrint * qty
-                    acc.arrow += totalArrow * qty
-                    acc.time += totalTime * qty
-                    return acc;
-                }, { food: 0, rock: 0, timber: 0, power: 0, time: 0, blueprint: 0, arrow: 0 });
-            }
+            const totals = state.buildings.reduce(
+                (acc, { totalFood, totalRock, totalTimber, totalPower, totalBluePrint, totalArrow, totalTime, qty }) => ({
+                    food: acc.food + totalFood * qty,
+                    rock: acc.rock + totalRock * qty,
+                    timber: acc.timber + totalTimber * qty,
+                    power: acc.power + totalPower * qty,
+                    blueprint: acc.blueprint + totalBluePrint * qty,
+                    arrow: acc.arrow + totalArrow * qty,
+                    time: acc.time + totalTime * qty,
+                }),
+                { food: 0, rock: 0, timber: 0, power: 0, blueprint: 0, arrow: 0, time: 0 }
+            );
 
-            let totalBuildings = resourceTotal(state.buildings)
+            Object.assign(state, totals, {
+                time: state.speedBoost > 0 ? totals.time * (100 / (100 + state.speedBoost)) : totals.time,
+            });
+        },
+    },
+});
 
-            state.food = totalBuildings.food
-            state.rock = totalBuildings.rock
-            state.timber = totalBuildings.timber
-            state.power = totalBuildings.power
-            state.blueprint = totalBuildings.blueprint
-            state.arrow = totalBuildings.arrow
-
-            if (state.speedBoost > 0) {
-                state.time = (totalBuildings.time) * (100 / (100 + state.speedBoost))
-            } else {
-                state.time = (totalBuildings.time)
-            }
-
-        }
-    }
-})
-
-
-export const { sumResources, setQty, totalResources, setbuildingsSpeedBoost, setLevel, clearValues } = buildingsSlice.actions;
+export const { sumResources, setQty, totalResources, setbuildingsSpeedBoost, setLevel, clearValues } =
+    buildingsSlice.actions;
 
 export default buildingsSlice.reducer;
