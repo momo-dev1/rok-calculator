@@ -4,6 +4,7 @@ import { Footer } from "@/components/index";
 import Head from "next/head";
 import Link from "next/link";
 import { HomeList } from "@/utils/HomeData";
+import HomeCard from "@/components/shared/HomeCard";
 
 const Home: NextPage = () => {
   return (
@@ -75,38 +76,24 @@ const Home: NextPage = () => {
             Rise of Kingdoms Calculator (RoK)
           </h1>
           <p className="max-w-2xl mx-auto mt-4 text-gray-200 text-sm md:text-base">
-            Rise of Kingdoms Calculator will help you manage your resources in
-            the game much easier! Simply navigate to the tool you would like to
-            use. Choose from the ones listed below!
+            The Rise of Kingdoms Calculator is designed to simplify your
+            resource management in the game! Just select the tool you need from
+            the list provided below.
           </p>
         </div>
 
         <main className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-10 max-w-5xl mx-auto pb-8 px-4">
-          {HomeList.map((item: any) => (
-            <Link key={item.name} href={item.url}>
-              <a>
-                <div className="hover:scale-105 duration-300">
-                  <p className="text-xs md:text-sm text-gray-300 mb-2">
-                    {item.text}
-                  </p>
-                  <figure
-                    className="flex items-center gap-5 cursor-pointer 
-                    h-full w-full bg-darkCharcoal rounded-md backdrop-filter backdrop-blur-lg bg-opacity-50 border border-gray-400 p-8"
-                  >
-                    <img
-                      width={64}
-                      height={64}
-                      className="h-16 object-contain"
-                      src={item.src.src}
-                      alt={item.name}
-                    />
-                    <h2 className="flex-1 text-3xl">{item.name}</h2>
-                  </figure>
-                </div>
-              </a>
-            </Link>
+          {HomeList.map((item) => (
+            <HomeCard
+              key={item.name}
+              name={item.name}
+              url={item.url}
+              text={item.text}
+              src={item.src}
+            />
           ))}
         </main>
+
         <Footer />
       </section>
     </>
