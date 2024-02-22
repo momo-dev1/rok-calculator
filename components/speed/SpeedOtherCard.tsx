@@ -5,82 +5,53 @@ import { setAmount } from "../../store/speedOtherSlice";
 type Props = {
   name: string;
   color?: string;
-  src: any;
+  src: { src: string }; // Assuming src is an object with a src string property
   value: number;
 };
 
 const SpeedOtherCard = ({ name, color, src, value }: Props) => {
   const dispatch = useDispatch();
 
-  const handleInputChange = (e: {
-    target: { name: string; value: any; maxLength: number };
-  }) => {
-    let { name, value, maxLength } = e.target;
-    if (value.length >= maxLength) {
-      value = value.substring(0, maxLength);
-    }
-    if (value < 0) return 0;
-
-    dispatch(setAmount({ name, value }));
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const inputVal = e.target.value;
+    // Parse input value to integer and clamp the value to 0 if negative
+    const parsedValue = Math.max(0, parseInt(inputVal, 10) || 0);
+    dispatch(setAmount({ name, value: parsedValue }));
   };
 
-  let itemName;
+  let itemName = name.replace(/(exp-|gem-|action-|food-|wood-|stone-|gold-)/, "");
 
-  if (name.includes("exp-")) {
-    itemName = name.replace("exp-", "");
-  } else if (name.includes("gem-")) {
-    itemName = name.replace("gem-", "");
-  } else if (name.includes("action-")) {
-    itemName = name.replace("action-", "");
-  } else if (name.includes("food-")) {
-    itemName = name.replace("food-", "");
-  } else if (name.includes("wood-")) {
-    itemName = name.replace("wood-", "");
-  } else if (name.includes("stone-")) {
-    itemName = name.replace("stone-", "");
-  } else if (name.includes("gold-")) {
-    itemName = name.replace("gold-", "");
-  } else {
-    itemName = name;
-  }
-
-  let frame;
-  if (color === "blue") {
-    frame = "bg-speed-frame-blue";
-  } else if (color === "purple") {
-    frame = "bg-speed-frame-purple";
-  } else if (color === "orange") {
-    frame = "bg-speed-frame-orange";
-  } else {
-    frame = "bg-speed-frame";
+  let frameColor = "bg-speed-frame"; // Default frame color
+  switch (color) {
+    case "blue":
+      frameColor = "bg-speed-frame-blue";
+      break;
+    case "purple":
+      frameColor = "bg-speed-frame-purple";
+      break;
+    case "orange":
+      frameColor = "bg-speed-frame-orange";
+      break;
+    // No default needed as we already set the default color
   }
 
   return (
     <div className="my-5 text-center">
       <figure className="relative flex flex-col items-center">
         <div className="px-2">
-          <label
-            htmlFor={name}
-            className=" text-md text-shadow text-white font-semibold 
-             w-fit mx-auto px-1 mb-0.5"
-          >
+          <label htmlFor={name} className="text-md text-shadow text-white font-semibold w-fit mx-auto px-1 mb-0.5">
             {itemName}
           </label>
-          <div
-            className={`flex items-center justify-center w-14 h-14 ${frame} bg-contain `}
-          >
-            <img className="w-10 h-10 " src={src.src} alt={`${name} img`} />
+          <div className={`flex items-center justify-center w-14 h-14 ${frameColor} bg-contain`}>
+            <img className="w-10 h-10" src={src.src} alt={`${name} img`} />
           </div>
         </div>
 
         <input
-          className={`text-center ${
-            value > 0 ? "text-yellow-400" : "text-white"
-          } outline-none bg-gray-800 py-1 border border-yellow-500 w-14 font-semibold `}
-          type="number"
+          className={`text-center ${value > 0 ? "text-yellow-400" : "text-white"} outline-none bg-gray-800 py-1 border border-yellow-500 w-14 font-semibold`}
+          type="text" // Change to text to manually handle numeric input
           id={name}
           name={name}
-          maxLength={6}
           value={value.toString()}
           onChange={handleInputChange}
           onFocus={(e) => e.target.select()}
