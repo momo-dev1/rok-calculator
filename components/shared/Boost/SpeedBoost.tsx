@@ -8,24 +8,23 @@ type Props = {
   title: string;
   value: number;
 };
+
 const SpeedBoost = ({ name, title, value }: Props) => {
   const dispatch = useDispatch();
-  const handleInputChange = (e: {
-    target: { value: string; maxLength: number };
-  }) => {
-    let { value, maxLength } = e.target;
-    if (value.length >= maxLength) {
-      value = value.substring(0, maxLength);
-    }
-    if (+value < 0) return 0;
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    let inputValue = e.target.value;
+    const newValue = Math.max(0, parseInt(inputValue, 10) || 0); // Ensures value is not negative and defaults to 0 if NaN
+
     if (name === "troops") {
-      dispatch(setTroopsSpeedBoost({ value }));
+      dispatch(setTroopsSpeedBoost(newValue));
     } else if (name === "buildings") {
-      dispatch(setbuildingsSpeedBoost({ value }));
+      dispatch(setbuildingsSpeedBoost({ value: newValue }));
     } else if (name === "troops healing") {
-      dispatch(setTroopsHealingBoost({ value }));
+      dispatch(setTroopsHealingBoost(newValue));
     }
   };
+
   return (
     <form>
       <div className="flex items-start justify-center gap-2 text-sm font-semibold text-white md:text-lg">
@@ -36,8 +35,8 @@ const SpeedBoost = ({ name, title, value }: Props) => {
             value > 0 ? "text-green-400" : "text-white"
           } text-center shadow-neumorphic rounded-md outline-none`}
           name={name}
-          value={value}
-          type="number"
+          value={value.toString()}
+          type="text"
           id={name}
           onChange={handleInputChange}
           onFocus={(e) => e.target.select()}

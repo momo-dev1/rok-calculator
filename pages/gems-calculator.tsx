@@ -1,14 +1,33 @@
 import type { NextPage } from "next";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { debounce } from "lodash";
 import { ClearBtn, Layout, SpeedOtherCard, HowToUse } from "@/components/index";
 import { sumCount, clearValues } from "@/store/speedOtherSlice";
 import { formatResources } from "@/utils/helpers";
 
+interface State {
+  speedOther: {
+    speedOther: {
+      name: string;
+      value: number;
+      category: string;
+      color: string;
+      src: string;
+    }[];
+    amount: number;
+  };
+  global: {
+    offset: number;
+  };
+}
+
 const GemsPackCalculator: NextPage = () => {
   const [sticky, setSticky] = useState<boolean>(false);
-  const { speedOther, amount } = useSelector((state: any) => state.speedOther);
-  const { offset } = useSelector((state: any) => state.global);
+  const { speedOther, amount } = useSelector(
+    (state: State) => state.speedOther
+  );
+  const { offset } = useSelector((state: State) => state.global);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -24,9 +43,15 @@ const GemsPackCalculator: NextPage = () => {
   }, [offset]);
 
   useEffect(() => {
-    window.addEventListener("scroll", setStickyResources);
-    return () => window.removeEventListener("scroll", setStickyResources);
+    const handleScroll = debounce(setStickyResources, 100);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [setStickyResources]);
+
+  const gemSpeedItems = useMemo(
+    () => speedOther.filter((item) => item.category === "gem"),
+    [speedOther]
+  );
 
   return (
     <>
@@ -49,40 +74,33 @@ const GemsPackCalculator: NextPage = () => {
 
       <Layout
         title="Gem Packs Calculator | Rise of Kingdoms (RoK)"
-        description="Rise of Kingdoms (RoK) - Gem calculator. Calculate how many Gems of knowledge you have in your inventory."
-        keywords="rise of kingdoms calculator, rok calculator, rok training, rok troops training, rok healing, rok calculate healing, rok calculate resources, rok calculate speedup, rok speedups, rok resources, rise of kindgdom healing calculator, rise of kingdom calculate resources, rise of kingdom calculate speedup "
+        description="Calculate how many Gems you have in your inventory."
         canonical="gems-calculator"
       >
-        <>
-          <div
-            style={{
-              backgroundColor: sticky ? "rgb(158 158 0 / .2)" : "transparent",
-            }}
-            className={`flex gap-3 z-[9999] px-4 py-2 ${
-              sticky ? "sticky -top-1 backdrop-filter backdrop-blur-2xl " : null
-            }`}
-          >
-            <div className="md:text-2xl flex items-center justify-center text-lg text-white gap-5 ">
-              Total: {formatResources(amount)}
-              <ClearBtn onClick={() => dispatch(clearValues())} />
-            </div>
+        <div
+          style={{
+            backgroundColor: sticky ? "rgba(158, 158, 0, 0.2)" : "transparent",
+          }}
+          className={`flex gap-3 z-[9999] px-4 py-2 ${
+            sticky ? "sticky top-0 backdrop-filter backdrop-blur-2xl" : ""
+          }`}
+        >
+          <div className="md:text-2xl flex items-center justify-center text-lg text-white gap-5">
+            Total: {formatResources(amount)}
+            <ClearBtn onClick={() => dispatch(clearValues())} />
           </div>
-          <div className="flex flex-wrap justify-center px-8 ">
-            {speedOther
-              .filter((item: any) => item.category === "gem")
-              .map((speedItem: any, index: number) => {
-                return (
-                  <SpeedOtherCard
-                    key={index}
-                    name={speedItem.name}
-                    color={speedItem.color}
-                    value={speedItem.value}
-                    src={speedItem.src}
-                  />
-                );
-              })}
-          </div>
-        </>
+        </div>
+        <div className="flex flex-wrap justify-center px-8">
+          {gemSpeedItems.map((speedItem, index) => (
+            <SpeedOtherCard
+              key={index}
+              name={speedItem.name}
+              color={speedItem.color}
+              value={speedItem.value}
+              src={speedItem.src}
+            />
+          ))}
+        </div>
       </Layout>
     </>
   );

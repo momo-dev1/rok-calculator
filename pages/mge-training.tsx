@@ -1,15 +1,7 @@
 import type { NextPage } from "next";
-import { useEffect } from "react";
-import {
-  tropsTier1,
-  tropsTier2,
-  tropsTier3,
-  tropsTier4,
-  tropsTier5,
-} from "@/utils/tropsData";
-import { clearValues, setQty, sumResources } from "@/store/tropsSlice";
+import { useCallback, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-
+import { clearValues, setQty, sumResources } from "@/store/tropsSlice";
 import {
   Layout,
   HowToUse,
@@ -18,6 +10,36 @@ import {
   SpeedBoost,
   TroopsTier,
 } from "@/components/index";
+import {
+  tropsTier1,
+  tropsTier2,
+  tropsTier3,
+  tropsTier4,
+  tropsTier5,
+} from "@/utils/tropsData";
+import { TropTier } from "types/dataTypes";
+
+interface State {
+  trops: {
+    food: number;
+    rock: number;
+    timber: number;
+    time: number;
+    power: number;
+    gold: number;
+    mgePoints: number;
+    speedBoost: number;
+    subsidy: number;
+    tier1: TropTier[];
+    tier2: TropTier[];
+    tier3: TropTier[];
+    tier4: TropTier[];
+    tier5: TropTier[];
+  };
+  global: {
+    offset: number;
+  };
+}
 
 const Troops: NextPage = () => {
   const {
@@ -35,19 +57,19 @@ const Troops: NextPage = () => {
     tier3,
     tier4,
     tier5,
-  } = useSelector((state: any) => state.trops);
-  const { offset } = useSelector((state: any) => state.global);
+  } = useSelector((state: State) => state.trops);
+  const { offset } = useSelector((state: State) => state.global);
   const dispatch = useDispatch();
 
-  const handleInputChange = (e: {
-    target: { name: any; value: any; maxLength: any };
-  }) => {
-    let { name, value, maxLength } = e.target;
-    if (value.length >= maxLength) return;
-    if (value < 0) return 0;
-
-    dispatch(setQty({ name, value }));
-  };
+  const handleInputChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      const { name, value, maxLength } = e.target;
+      const parsedValue = value.replace(/\D/g, ""); // Remove non-digit characters
+      if (parsedValue.length > maxLength) return; // Prevent input longer than maxLength
+      dispatch(setQty({ name, value: parsedValue === "" ? "0" : parsedValue }));
+    },
+    [dispatch]
+  );
 
   useEffect(() => {
     dispatch(sumResources());
@@ -105,8 +127,7 @@ const Troops: NextPage = () => {
 
       <Layout
         title="Troops Training Calculator | Rise of Kingdoms (RoK)"
-        description="Rise of Kingdoms (RoK) - Troops Training Calculator Figure out the number of minutes and resources needed to train troops."
-        keywords="rise of kingdoms calculator, rok calculator, rok training, rok troops training, rok healing, rok calculate healing, rok calculate resources, rok calculate speedup, rok speedups, rok resources, rise of kindgdom healing calculator, rise of kingdom calculate resources, rise of kingdom calculate speedup"
+        description="Rise of Kingdoms (RoK) - Troops Training Calculator. Figure out the number of minutes and resources needed to train troops."
         canonical="mge-training"
       >
         <>
@@ -133,38 +154,17 @@ const Troops: NextPage = () => {
             currentScroll={offset}
           />
 
-          <div className="divide-y divide-dashed divide-gray-400 ">
-            <TroopsTier
-              title="T1 Troops"
-              tierArray={tropsTier1}
-              tierType={tier1}
-              handleInputChange={handleInputChange}
-            />
-            <TroopsTier
-              title="T2 Troops"
-              tierArray={tropsTier2}
-              tierType={tier2}
-              handleInputChange={handleInputChange}
-            />
-            <TroopsTier
-              title="T3 Troops"
-              tierArray={tropsTier3}
-              tierType={tier3}
-              handleInputChange={handleInputChange}
-            />
-            <TroopsTier
-              title="T4 Troops"
-              tierArray={tropsTier4}
-              tierType={tier4}
-              handleInputChange={handleInputChange}
-            />
-            <TroopsTier
-              title="T5 Troops"
-              tierArray={tropsTier5}
-              tierType={tier5}
-              handleInputChange={handleInputChange}
-            />
-          </div>
+          {[tropsTier1, tropsTier2, tropsTier3, tropsTier4, tropsTier5].map(
+            (tier, index) => (
+              <TroopsTier
+                key={index}
+                title={`T${index + 1} Troops`}
+                tierArray={tier}
+                tierType={[tier1, tier2, tier3, tier4, tier5][index]}
+                handleInputChange={handleInputChange}
+              />
+            )
+          )}
         </>
       </Layout>
     </>

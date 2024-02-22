@@ -39,13 +39,20 @@ const TroopsHealing: NextPage = () => {
   const dispatch = useDispatch();
 
   const handleInputChange = (e: {
-    target: { name: any; value: any; maxLength: any };
+    target: { name: string; value: string; maxLength: number };
   }) => {
     let { name, value, maxLength } = e.target;
-    if (value.length >= maxLength) return;
-    if (value < 0) return 0;
 
-    dispatch(setQty({ name, value }));
+    // Remove any non-numeric characters from the input
+    const numericValue = value.replace(/[^\d]/g, "");
+
+    // Check if the input exceeds the maxLength, if so, truncate it
+    const trimmedValue = numericValue.slice(0, maxLength);
+
+    // Convert empty string to '0' to avoid NaN issues, otherwise use the numeric value
+    const finalValue = trimmedValue === "" ? "0" : trimmedValue;
+
+    dispatch(setQty({ name, value: finalValue }));
   };
 
   useEffect(() => {

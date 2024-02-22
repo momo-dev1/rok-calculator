@@ -53,35 +53,58 @@ const BuildingsPage: NextPage = () => {
   return (
     <>
       <HowToUse title="Building Calculator">
-        <div className="text-md md:text-lg space-y-3 text-gray-100">
+        <div className="text-md md:text-lg space-y-3 text-gray-100 mt-4">
+          {/* Multiple Buildings */}
           <div className="space-y-2">
-            <span className="gap-2 flex flex-wrap items-center">
-              If you want more than one building, edit this input
+            <h3 className="text-xl">Multiple Buildings:</h3>
+
+            <span className="gap-2 flex flex-wrap items-center ml-2  font-light">
+              • To calculate for more than one building, enter the desired
+              number of buildings here.
               <BuildingCountIcon />
-              <span className="ml-1 text-sm"> (Optional) </span>
+              <span className="ml-1 text-sm">(Optional)</span>
             </span>
           </div>
 
+          {/* Starting from Scratch */}
           <div className="space-y-2">
-            <span className="gap-2 flex flex-wrap items-center">
-              If you want to calculate the whole Building from the beginning,
-              leave current level as
+            <h3 className="text-xl">Starting from Scratch:</h3>
+            <span className="gap-2 flex flex-wrap items-center ml-2 font-light">
+              • If you're starting a new building, leave the 'current level'
+              field set to
               <FromIcon />
+              <span className="ml-1 text-sm">(Optional)</span>
             </span>
-            <span className="gap-2 flex flex-wrap items-center">
-              or you can adjust selection to your current level for example
-              <FromFiveIcon />
-              <span className="ml-1 text-sm"> (Optional) </span>
-            </span>
-          </div>
-          <div className="flex flex-wrap items-center gap-2">
-            then select your goal Building level <GoalIcon />
           </div>
 
-          <p>
-            Adjust the Building Speed Bonus.
-            <span className="ml-1 text-sm">(Optional)</span>
-          </p>
+          {/* Continuing Progress */}
+          <div className="space-y-2">
+            <h3 className="text-xl">Continuing Progress:</h3>
+            <span className="gap-2 flex flex-wrap items-center ml-2 font-light">
+              • If you're continuing from a previous level, select your current
+              level from here.
+              <FromFiveIcon /> <span className="ml-1 text-sm">(Optional)</span>
+            </span>
+          </div>
+
+          {/* Setting Goals */}
+          <div>
+            <h3 className="text-xl">Setting Goals:</h3>
+            <p className="flex flex-wrap items-center gap-2 ml-2 font-light">
+              • Choose your target level by selecting the desired level here.
+              <GoalIcon />{" "}
+            </p>
+          </div>
+
+          {/* Speeding Up */}
+          <div>
+            <h3 className="text-xl">Speeding Up:</h3>
+            <p className="ml-2 font-light">
+              • To account for any speed bonuses, adjust the 'Building Speed
+              Bonus' percentage as needed.
+              <span className="ml-1 text-sm">(Optional)</span>
+            </p>
+          </div>
         </div>
       </HowToUse>
 
