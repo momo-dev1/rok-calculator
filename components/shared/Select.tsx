@@ -6,13 +6,13 @@ import {
 } from "@/store/buildingsSlice";
 
 type SelectOption = {
-  label: string;
-  value: string;
+  label: any;
+  value: number;
 };
 type SelectProps = {
   options: SelectOption[];
   value: number;
-  label: string;
+  label: any;
   name: string;
   buildings?: boolean;
   disable?: number;
@@ -30,7 +30,7 @@ const Select = ({
   const updateLevel = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const { name, value } = e.target;
     if (buildings) {
-      dispatch(setBuildingsLevel({ name, value, label }));
+      dispatch(setBuildingsLevel({ name, value: Number(value), label }));
       dispatch(sumBuildingsResources({ name, label }));
     }
   };
