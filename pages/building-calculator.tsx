@@ -63,8 +63,8 @@ const BuildingsPage: NextPage = () => {
           <div className="space-y-2">
             <h3 className="text-xl">Starting from Scratch:</h3>
             <span className="gap-2 flex flex-wrap items-center ml-2 font-light">
-              • If you're starting a new building, leave the 'current level'
-              field set to
+              • If you&apos;re starting a new building, leave the &apos;current
+              level&apos; field set to
               <FromIcon />
               <span className="ml-1 text-sm">(Optional)</span>
             </span>
@@ -74,8 +74,8 @@ const BuildingsPage: NextPage = () => {
           <div className="space-y-2">
             <h3 className="text-xl">Continuing Progress:</h3>
             <span className="gap-2 flex flex-wrap items-center ml-2 font-light">
-              • If you're continuing from a previous level, select your current
-              level from here.
+              • If you&apos;re continuing from a previous level, select your
+              current level from here.
               <FromFiveIcon /> <span className="ml-1 text-sm">(Optional)</span>
             </span>
           </div>
@@ -93,8 +93,8 @@ const BuildingsPage: NextPage = () => {
           <div>
             <h3 className="text-xl">Speeding Up:</h3>
             <p className="ml-2 font-light">
-              • To account for any speed bonuses, adjust the 'Building Speed
-              Bonus' percentage as needed.
+              • To account for any speed bonuses, adjust the &apos;Building
+              Speed Bonus&apos; percentage as needed.
               <span className="ml-1 text-sm">(Optional)</span>
             </p>
           </div>
