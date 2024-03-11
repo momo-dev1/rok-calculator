@@ -52,7 +52,7 @@ const TroopsHealing: NextPage = () => {
     // Convert empty string to '0' to avoid NaN issues, otherwise use the numeric value
     const finalValue = trimmedValue === "" ? "0" : trimmedValue;
 
-    dispatch(setQty({ name, value: finalValue }));
+    dispatch(setQty({ name, value: +finalValue }));
   };
 
   useEffect(() => {
