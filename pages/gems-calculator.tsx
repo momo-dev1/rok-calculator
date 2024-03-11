@@ -13,7 +13,7 @@ interface State {
       value: number;
       category: string;
       color: string;
-      src: string;
+      src: { src: string };
     }[];
     amount: number;
   };

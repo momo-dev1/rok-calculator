@@ -5,7 +5,7 @@ import { setAmount } from "../../store/speedOtherSlice";
 type Props = {
   name: string;
   color?: string;
-  src: { src: string }; // Assuming src is an object with a src string property
+  src: { src: string };
   value: number;
 };
 
@@ -19,7 +19,10 @@ const SpeedOtherCard = ({ name, color, src, value }: Props) => {
     dispatch(setAmount({ name, value: parsedValue }));
   };
 
-  let itemName = name.replace(/(exp-|gem-|action-|food-|wood-|stone-|gold-)/, "");
+  let itemName = name.replace(
+    /(exp-|gem-|action-|food-|wood-|stone-|gold-)/,
+    ""
+  );
 
   let frameColor = "bg-speed-frame"; // Default frame color
   switch (color) {
@@ -39,16 +42,23 @@ const SpeedOtherCard = ({ name, color, src, value }: Props) => {
     <div className="my-5 text-center">
       <figure className="relative flex flex-col items-center">
         <div className="px-2">
-          <label htmlFor={name} className="text-md text-shadow text-white font-semibold w-fit mx-auto px-1 mb-0.5">
+          <label
+            htmlFor={name}
+            className="text-md text-shadow text-white font-semibold w-fit mx-auto px-1 mb-0.5"
+          >
             {itemName}
           </label>
-          <div className={`flex items-center justify-center w-14 h-14 ${frameColor} bg-contain`}>
+          <div
+            className={`flex items-center justify-center w-14 h-14 ${frameColor} bg-contain`}
+          >
             <img className="w-10 h-10" src={src.src} alt={`${name} img`} />
           </div>
         </div>
 
         <input
-          className={`text-center ${value > 0 ? "text-yellow-400" : "text-white"} outline-none bg-gray-800 py-1 border border-yellow-500 w-14 font-semibold`}
+          className={`text-center ${
+            value > 0 ? "text-yellow-400" : "text-white"
+          } outline-none bg-gray-800 py-1 border border-yellow-500 w-14 font-semibold`}
           type="text" // Change to text to manually handle numeric input
           id={name}
           name={name}
