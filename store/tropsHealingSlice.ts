@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { TroopsInitialState } from "../types/dataTypes";
 import { healingTiers as tiers } from "../utils/TiersData";
 
