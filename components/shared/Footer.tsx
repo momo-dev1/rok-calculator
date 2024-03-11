@@ -41,12 +41,12 @@ const Footer = () => {
           </Link>
         </div>
 
-        <div className="space-x-2 text-sm sm:text-base md:text-lg">
-          <span>All rights reserved</span>
+        <div className="space-x-1 text-sm sm:text-base md:text-lg">
+          <span>Developed by Mohamed Abdelhadi.All rights reserved.</span>
 
           <span>
-            • This is a fan site that is not associated, endorsed, or sponsored
-            by Lilith games, and Lilith games is not responsible for it.
+            This is a fan site that is not associated, endorsed, or sponsored by
+            Lilith games, and Lilith games is not responsible for it.
           </span>
         </div>
       </div>
