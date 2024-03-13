@@ -4,6 +4,7 @@ export type TropTier = {
     stone: number
     timber: number
     gold: number
+    ore?: number
     time: number
     mgePoints: number
     power: number

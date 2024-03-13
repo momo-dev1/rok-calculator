@@ -47,7 +47,7 @@ const troopsSlice = createSlice({
 
             tiers.forEach(tier => {
                 tier.forEach(item => {
-                    const { food, stone, timber, ore, time, mgePoints, power, gold, qty } = item;
+                    const { food, stone, timber, ore = 0, time, mgePoints, power, gold, qty } = item;
                     const multiplier = 1 - (state.subsidy / 100);
                     state.food += food * qty * multiplier;
                     state.rock += stone * qty * multiplier;

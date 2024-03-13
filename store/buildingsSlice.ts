@@ -43,7 +43,7 @@ const buildingsSlice = createSlice({
         sumResources: (state, { payload: { name, label } }: PayloadAction<{ name: string; label: 'to' }>) => {
             const idx = findBuildingIndexByName(state, name);
             if (idx !== -1) {
-                const building = state.buildings[idx];
+                const building = state.buildings[idx] as any;
                 const { start, end } = building;
 
                 if (end !== 0 && start >= end) return initialState;
@@ -65,7 +65,7 @@ const buildingsSlice = createSlice({
 
                 ['food', 'rock', 'timber', 'power', 'blueprint', 'arrow', 'time'].forEach((resource) => {
                     building[`total${resource.charAt(0).toUpperCase() + resource.slice(1)}`] =
-                        building[resource].slice(start, end).reduce((acc, curr) => acc + curr, 0);
+                        building[resource].slice(start, end).reduce((acc: any, curr: any) => acc + curr, 0);
                 });
             }
         },

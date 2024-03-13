@@ -27,25 +27,25 @@ const troopsHealingSlice = createSlice({
         setTroopsSubSidy: (state, action: PayloadAction<number>) => {
             state.subsidy = action.payload;
         },
-        setQty: (state, action: PayloadAction<{ name: string; value: number }>) => {
+        setQty: (state: any, action: PayloadAction<{ name: string; value: number }>) => {
             const { name, value } = action.payload;
             const tierKeys = ['tier1', 'tier2', 'tier3', 'tier4', 'tier5'];
             for (const key of tierKeys) {
                 const tier = state[key];
-                const unit = tier.find(unit => unit.name.includes(name));
+                const unit = tier.find((unit: { name: string | string[]; }) => unit.name.includes(name));
                 if (unit) {
                     unit.qty = value;
                     break;
                 }
             }
         },
-        sumResources: (state) => {
+        sumResources: (state: any) => {
             const tiers = ['tier1', 'tier2', 'tier3', 'tier4', 'tier5'];
             let totals = { food: 0, rock: 0, timber: 0, ore: 0, time: 0, gold: 0 };
 
             tiers.forEach(tierKey => {
                 const tier = state[tierKey];
-                tier.forEach(unit => {
+                tier.forEach((unit: { food: number; stone: number; timber: number; ore: number; time: number; gold: number; qty: number; }) => {
                     const { food, stone, timber, ore, time, gold, qty } = unit;
                     totals = {
                         food: totals.food + food * qty,
