@@ -1,6 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
-import BuyMeCoffe from "/public/assets/buymeacoffe.webp";
 
 const Footer = () => {
   return (
@@ -30,23 +29,15 @@ const Footer = () => {
               </div>
             </a>
           </Link>
-          <Link href="https://www.buymeacoffee.com/rokcalc1">
-            <a className="block w-32 mb-1" target="_blank" rel="noreferrer">
-              <img
-                className="w-full h-full"
-                src={BuyMeCoffe.src}
-                alt="Buy Me A Coffee"
-              />
-            </a>
-          </Link>
         </div>
 
         <div className="space-x-1 text-sm sm:text-base md:text-lg">
-          <span>Developed by Mohamed Abdelhadi.All rights reserved.</span>
+          <span>All rights reserved.</span>
 
           <span>
             This is a fan site that is not associated, endorsed, or sponsored by
-            Lilith games, and Lilith games is not responsible for it.
+            Lilith games, and Lilith games is not responsible for it.{" "}
+            <span className="underline"> Crafted by Mohamed Abdelhadi</span>
           </span>
         </div>
       </div>
