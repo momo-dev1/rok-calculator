@@ -6,7 +6,7 @@ ROK Calculator is a fan-created utility website for the popular mobile game, Ris
 
 ## Preview
 
-![Preview of ROK Calculator](/public/assets/rok-calculator-preview.png)
+https://github.com/momo-dev1/rok-calculator/assets/57541594/5a4b29d8-ac61-4c29-9737-524d2c4a2b01
 
 ## Built With
 
